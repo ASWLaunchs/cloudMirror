@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云镜</title>
+    <link rel="stylesheet" href="/static/pkg/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="/static/pkg/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="/static/pkg/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/static/assets/images/CloudMirror.svg" width="30" height="30" class="d-inline-block align-top"
+                alt="">
+            &nbsp;云镜
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">全部</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">图片</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">视频</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">音乐</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">统计</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查询</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div id="container" class="container">
+        <!-- Text CONTENT -->
+        <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-6">
+                <div class="item item-text">
+                    <h5 class="item-text-title">什么是云镜？</h5>
+                    <div class="item-text-brief">
+                        云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。</div>
+                    <span class="badge badge-warning">Warning</span>
+                </div>
+
+                <!-- Music CONTENT -->
+                <div class="item item-audio">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header"><button type="button" class="btn btn-light"><i
+                                    class="fas fa-play"></i></button></div>
+                        <div class="card-body">
+                            <h5 class="card-title">秋天的风</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Image CONTENT -->
+                <div class="item item-image" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                    <img src="/static/assets/images/CloudMirror.svg" height="200" />
+                </div>
+
+                <!--Video CONTENT -->
+                <div class="item item-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                    <video controls="controls" autoplay="autoplay">
+                        <source src="/static/assets/videos/movie.ogg" type="video/ogg" />
+                        <source src="/static/assets/videos/movie.mp4" type="video/mp4" />
+                        <source src="/static/assets/videos/movie.webm" type="video/webm" />
+                        <object data="/static/assets/videos/movie.mp4" width="320" height="240">
+                            <embed width="320" height="240" src="/static/assets/videos/movie.swf" />
+                        </object>
+                    </video>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0"></div>
+        </div>
+
+    </div>
+    <div class="modal fade bd-CloudMirror-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div id="imgDetail" class="modal-content">
+                <img src="" alt="">
+                <hr>
+                <div class="text-light bg-dark"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/pkg/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+    <script src="/static/pkg/rowGrid.js-master/jquery.row-grid.min.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

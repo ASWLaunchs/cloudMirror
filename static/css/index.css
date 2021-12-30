@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #202124;
+    background-color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-y: scroll;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+nav {
+    margin-bottom: 10px;
+    z-index: 999;
+    box-shadow: 1px 1px 12px 1px rgb(129, 126, 77);
+}
+
+#title {
+    text-align: center;
+    color: #fff;
+    background-color: #ffffff;
+    font-size: 1.4em;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#container {
+    margin-top: 20px;
+}
+
+/* clearfix because of floats */
+#container:before,
+#container:after {
+    content: "";
+    display: table;
+}
+
+#container:after {
+    clear: both;
+}
+
+#container img {
+    height: 200px;
+    border: 0.5px solid #ddd;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#container img:hover {
+    border-radius: 0;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 12px 1px rgb(168, 168, 168);
+}
+
+
+#container .item {
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+#container .item-text {
+    padding-left: 10px;
+    border-left: 4px solid rgb(240, 243, 43);
+}
+
+#container .item-text-title {
+    font-weight: bolder;
+}
+
+#container .item-text-brief {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+#container .item-audio {
+    border-left: 4px solid rgb(59, 59, 59);
+}
+
+#container .item-image {
+    border-left: 4px solid rgb(92, 190, 255);
+}
+
+#container .item-video {
+    border-left: 4px solid rgb(241, 133, 255);
+}
+
+
+.item img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: bottom;
+    border-radius: 4px;
+}
+
+.first-item {
+    clear: both;
+}
+
+/* remove margin bottom on last row */
+.last-row,
+.last-row~.item {
+    margin-bottom: 0;
+}
+
+#imgDetail div {
+    display: block;
+    padding: 4px 12px 4px;
+    overflow-x: scroll;
+}
