@@ -13,7 +13,7 @@ import (
 // w表示response对象，返回给客户端的内容都在对象里处理
 // r表示客户端请求对象，包含了请求头，请求参数等等
 func index(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("html/index.html")
+	t, _ := template.ParseFiles("templates/default/index.html")
 	t.Execute(w, r)
 }
 
