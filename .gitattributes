@@ -1,3 +1,5 @@
 *.js linguist-language=GoLang
 *.css linguist-language=GoLang
+*.sass linguist-language=GoLang
+*.less linguist-language=GoLang
 *.html linguist-language=GoLang
