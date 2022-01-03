@@ -1,4 +1,4 @@
-module X9Plan-CloudMirror.com/v1
+module cloudMirror/v1
 
 go 1.17
 

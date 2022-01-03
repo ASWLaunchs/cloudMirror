@@ -2,6 +2,7 @@
 package main
 
 import (
+	"cloudMirror/v1/models"
 	"fmt"
 	"html/template"
 	"log"
@@ -14,6 +15,8 @@ import (
 // r表示客户端请求对象，包含了请求头，请求参数等等
 func index(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("templates/default/index.html")
+	//填入存放静态资源的文件路径，系统将自动读取相关信息并存入到数据库中
+	models.GetFileInfo("")
 	t.Execute(w, r)
 }
 
@@ -25,7 +28,9 @@ func main() {
 	http.Handle("/static/assets/videos/", http.StripPrefix("/static/assets/videos/", http.FileServer(http.Dir("static/assets/videos/"))))
 	http.Handle("/static/assets/images/", http.StripPrefix("/static/assets/images/", http.FileServer(http.Dir("static/assets/images/"))))
 	http.Handle("/static/assets/fonts/", http.StripPrefix("/static/assets/fonts/", http.FileServer(http.Dir("static/assets/fonts/"))))
+	//接口服务
 	http.HandleFunc("/", index)
+	http.HandleFunc("/search", models.Search)
 	// 启动web服务，监听9090端口
 	fmt.Println("这里是云镜服务中心，云镜已经启动！")
 	log.Fatal(http.ListenAndServe("localhost:9090", nil))
