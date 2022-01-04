@@ -6,6 +6,7 @@
 
 # 项目依赖
 - MinGW-w64-v8.1.0
-- go-v1.17.5
-- bootstrap-v4.6.x
-- jquery-v3.6.0
+- Go-v1.17.5
+- BootStrap-v4.6.x
+- JQuery-v3.6.0
+- SQLite3
