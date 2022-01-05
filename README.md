@@ -10,3 +10,27 @@
 - BootStrap-v4.6.x
 - JQuery-v3.6.0
 - SQLite3
+
+# 推荐的静态文件路径结构
+```
+asserts
+│
+│
+└───audios
+│   │   file01.mp3
+│   │   file02.mp3
+│   
+└───videos
+|    │   file01.mp4
+|    │   file02.mp4
+|
+└───images
+|    │   file01.png
+|    │   file02.jpg
+|    |   file03.jpge
+|
+└───doc
+    │   file01.md
+    │   file02.docx
+    |   file03.txt
+```
