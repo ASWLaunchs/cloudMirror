@@ -2,36 +2,27 @@
 package main
 
 import (
-	"cloudMirror/v1/models"
+	"cloudMirror/routers"
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
-// w表示response对象，返回给客户端的内容都在对象里处理
-// r表示客户端请求对象，包含了请求头，请求参数等等
-func index(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("templates/default/index.html")
-	//填入存放静态资源的文件路径，系统将自动读取相关信息并存入到数据库中
-	models.GetFileInfo("")
-	t.Execute(w, r)
-}
-
 func main() {
-	// 设置路由，如果访问/，则调用index方法
+	// 静态文件路径
 	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("static/css/"))))
 	http.Handle("/static/js/", http.StripPrefix("/static/js/", http.FileServer(http.Dir("static/js/"))))
 	http.Handle("/static/pkg/", http.StripPrefix("/static/pkg/", http.FileServer(http.Dir("static/pkg/"))))
 	http.Handle("/static/assets/videos/", http.StripPrefix("/static/assets/videos/", http.FileServer(http.Dir("static/assets/videos/"))))
 	http.Handle("/static/assets/images/", http.StripPrefix("/static/assets/images/", http.FileServer(http.Dir("static/assets/images/"))))
 	http.Handle("/static/assets/fonts/", http.StripPrefix("/static/assets/fonts/", http.FileServer(http.Dir("static/assets/fonts/"))))
-	//接口服务
-	http.HandleFunc("/", index)
-	http.HandleFunc("/search", models.Search)
+
+	//加载路由
+	routers.ApiRoutersDefault()
+
 	// 启动web服务，监听9090端口
-	fmt.Println("这里是云镜服务中心，云镜已经启动！")
+	fmt.Println("这里是云镜服务中心，云镜已经启动！请打开端口9090查看.")
 	log.Fatal(http.ListenAndServe("localhost:9090", nil))
 }

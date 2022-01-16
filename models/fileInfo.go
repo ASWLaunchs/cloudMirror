@@ -6,8 +6,8 @@ import (
 	"log"
 )
 
-//GetInfo()用于录入从指定文件目录读取到的信息,返回读取到的文件列表信息
-func GetFileInfo(dirname string) []string {
+//FileInfo()用于录入从指定文件目录读取到的信息,返回读取到的文件列表信息
+func FileInfo(dirname string) []string {
 	fileInfo := []string{}
 	fileInfoList, err := ioutil.ReadDir(dirname)
 	if err != nil {

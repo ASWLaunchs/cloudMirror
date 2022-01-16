@@ -1,4 +1,4 @@
-module cloudMirror/v1
+module cloudMirror
 
 go 1.17
 
