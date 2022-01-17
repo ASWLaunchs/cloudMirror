@@ -56,46 +56,62 @@
         <!-- Text CONTENT -->
         <div class="row">
             <div class="col-sm-6 col-md-5 col-lg-6">
-                <div class="item item-text">
-                    <h5 class="item-text-title">什么是云镜？</h5>
-                    <div class="item-text-brief">
+                <div class="item item-type-doc">
+                    <div class="item-head-doc"><img class="item-type-icon" src="/static/assets/images/doc.svg" alt=""
+                            srcset=""><span class="item-doc-title">什么是云镜？</span></div>
+                    <div class="item-brief-doc">
                         云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。</div>
-                    <span class="badge badge-warning">Warning</span>
                 </div>
 
                 <!-- Music CONTENT -->
-                <div class="item item-audio">
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header"><button type="button" class="btn btn-light"><i
-                                    class="fas fa-play"></i></button></div>
-                        <div class="card-body">
-                            <h5 class="card-title">秋天的风</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
+                <div class="item item-type-audio">
+                    <div class="item-head-audio"><img class="item-type-icon" src="/static/assets/images/audio.svg"
+                            alt="" srcset=""><span class="item-audio-title">小哆啦之歌</span></div>
+                    <div class="item-brief-doc">
+                        云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。</div>
                 </div>
 
                 <!--Image CONTENT -->
-                <div class="item item-image" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
-                    <img src="/static/assets/images/CloudMirror.svg" height="200" />
+                <div class="item item-type-image" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                    <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/image.svg"
+                            alt="" srcset=""><span class="item-image-title">云图Logo</span></div>
+                    <div class="item-brief-doc">
+                        <img src="/static/assets/images/CloudMirror.svg" height="200" />
+                    </div>
                 </div>
 
                 <!--Video CONTENT -->
-                <div class="item item-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
-                    <video controls="controls" autoplay="autoplay">
-                        <source src="/static/assets/videos/movie.ogg" type="video/ogg" />
-                        <source src="/static/assets/videos/movie.mp4" type="video/mp4" />
-                        <source src="/static/assets/videos/movie.webm" type="video/webm" />
-                        <object data="/static/assets/videos/movie.mp4" width="320" height="240">
-                            <embed width="320" height="240" src="/static/assets/videos/movie.swf" />
-                        </object>
-                    </video>
+                <div class="item item-type-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                    <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/video.svg"
+                            alt="" srcset=""><span class="item-image-title">演示视频</span></div>
+                    <div class="item-brief-doc">
+                        <video controls="controls" autoplay="autoplay">
+                            <source src="/static/assets/videos/movie.ogg" type="video/ogg" />
+                            <source src="/static/assets/videos/movie.mp4" type="video/mp4" />
+                            <source src="/static/assets/videos/movie.webm" type="video/webm" />
+                            <object data="/static/assets/videos/movie.mp4" width="320" height="240">
+                                <embed width="320" height="240" src="/static/assets/videos/movie.swf" />
+                            </object>
+                        </video>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0"></div>
         </div>
-
+        <!-- 按钮组 -->
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-light">1</button>
+                <button type="button" class="btn btn-light">2</button>
+                <button type="button" class="btn btn-light">3</button>
+                <button type="button" class="btn btn-light">4</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-light">下一页</button>
+            </div>
+        </div>
     </div>
+    <!-- Modal框 -->
     <div class="modal fade bd-CloudMirror-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -106,6 +122,7 @@
             </div>
         </div>
     </div>
+
     <script src="/static/pkg/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
     <script src="/static/pkg/rowGrid.js-master/jquery.row-grid.min.js"></script>
     <script src="/static/js/index.js"></script>
