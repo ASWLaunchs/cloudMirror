@@ -15,9 +15,7 @@ func main() {
 	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("static/css/"))))
 	http.Handle("/static/js/", http.StripPrefix("/static/js/", http.FileServer(http.Dir("static/js/"))))
 	http.Handle("/static/pkg/", http.StripPrefix("/static/pkg/", http.FileServer(http.Dir("static/pkg/"))))
-	http.Handle("/static/assets/videos/", http.StripPrefix("/static/assets/videos/", http.FileServer(http.Dir("static/assets/videos/"))))
-	http.Handle("/static/assets/images/", http.StripPrefix("/static/assets/images/", http.FileServer(http.Dir("static/assets/images/"))))
-	http.Handle("/static/assets/fonts/", http.StripPrefix("/static/assets/fonts/", http.FileServer(http.Dir("static/assets/fonts/"))))
+	http.Handle("/static/assets/", http.StripPrefix("/static/assets/", http.FileServer(http.Dir("static/assets/"))))
 
 	//加载路由
 	routers.ApiRoutersDefault()
