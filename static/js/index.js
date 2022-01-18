@@ -8,7 +8,7 @@ $(function () {
         firstItemClass: "first-item"
     });
     //获取图像
-    func.getImgData()
+    // func.getImgData()
 })
 
 var func = {
@@ -18,7 +18,13 @@ var func = {
             if (data.status) {
                 let content = ''
                 data.msg.forEach(function (value) {
-                    content += "<div class='item' data-toggle=\"modal\" data-target=\".bd-CloudMirror-modal-lg\" onclick=\"func.imgDetail(event,'" + value.adding_time + "','" + value.did + "')\"><img src=\'" + value.url + "\' /></div>"
+                    content += `<div 
+                    class='item' 
+                    data-toggle=\"modal\"
+                    data-target=\".bd-CloudMirror-modal-lg\"
+                    onclick=\"func.fileDetail(event,'${value.bid}','${value.fid}','${fileType}','${value.created_time}')\">
+                    <img src=\'" + value.url + "\' />
+                    </div>`
                 })
                 // append new items
                 $("#container").append(content);
@@ -28,11 +34,63 @@ var func = {
             $("#container").rowGrid("appended");
         })
     },
-    //图像详情
-    imgDetail: function (e, adding_time, did) {
-        $("#imgDetail").find("img").eq(0).attr("src", e.target.src)
-        $("#imgDetail").find("div").eq(0).html(
-            `<p>URL:${e.target.src}</p><p>所属区块:${did}</p><p>添加时间:${adding_time}</p>`
-        )
+    //文件详情
+    fileDetail: function (e, bid, fid, fileType, created_time) {
+        let content = null
+        switch (fileType) {
+            case "doc":
+                content = func.getDoc(bid, fid, fileType, created_time)
+                break;
+            case "audio":
+                content = func.getAudio(e, bid, fid, fileType, created_time)
+                break;
+            case "image":
+                content = func.getImage(e, bid, fid, fileType, created_time)
+                break;
+            case "video":
+                content = func.getVideo(e, bid, fid, fileType, created_time)
+                break;
+            default:
+                break;
+        }
+        $("#fileDetail").html(content)
+    },
+    //getDoc() 用于获取文档内容
+    getDoc(fid) {
+        $.get("/getDoc", {
+            "fid": fid
+        }).done(function (data) {
+            if (data.status) {
+                let content = `
+                <hr>
+                <div class="text-light bg-dark">
+                    <p>URL:${e.target.src}</p>
+                    <p>区块ID:${bid}</p>
+                    <p>文件ID:${fid}</p>
+                    <p>创建时间:${created_time}</p>
+                </div>`
+            }
+        })
+        return content
+    },
+
+    //getImage() 用于获取图像内容
+    getImage(fid) {
+        $.get("/getImage", {
+            "fid": fid
+        }).done(function (data) {
+            if (data.status) {
+                let content = `
+                <img src="${e.target.src}" alt="">
+                <hr>
+                <div class="text-light bg-dark">
+                    <p>URL:${e.target.src}</p>
+                    <p>区块ID:${bid}</p>
+                    <p>文件ID:${fid}</p>
+                    <p>创建时间:${created_time}</p>
+                </div>`
+            }
+        })
+        return content
     }
 }

@@ -4,6 +4,7 @@ body {
     color: #202124;
     background-color: #fff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url('../assets//images/bg.png');
     overflow-y: scroll;
 }
 
@@ -12,8 +13,8 @@ body {
     height: 24px;
 }
 
+
 nav {
-    margin-bottom: 10px;
     z-index: 999;
     box-shadow: 1px 1px 12px 1px rgb(129, 126, 77);
 }
@@ -94,19 +95,19 @@ nav {
 }
 
 #container .item-type-doc {
-    border-left: 4px solid rgb(240, 243, 43);
+    border-left: 4px solid rgb(82, 168, 226);
 }
 
 #container .item-type-audio {
-    border-left: 4px solid rgb(59, 59, 59);
+    border-left: 4px solid rgb(116, 116, 116);
 }
 
 #container .item-type-image {
-    border-left: 4px solid rgb(92, 190, 255);
+    border-left: 4px solid rgb(215, 218, 37);
 }
 
 #container .item-type-video {
-    border-left: 4px solid rgb(241, 133, 255);
+    border-left: 4px solid rgb(95, 187, 130);
 }
 
 
@@ -131,4 +132,13 @@ nav {
     display: block;
     padding: 4px 12px 4px;
     overflow-x: scroll;
+}
+
+footer {
+    display: block;
+    width: 100%;
+    padding: 14px auto;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd;
 }

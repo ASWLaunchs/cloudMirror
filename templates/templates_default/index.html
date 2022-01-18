@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/pkg/fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="/static/pkg/bootstrap-4.6.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/loading.css">
     <script src="/static/pkg/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -46,10 +47,33 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查询</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
             </form>
         </div>
     </nav>
+
+    <!-- Loading -->
+    <div id="loadingView" class="text-center">
+        <div class='body'>
+            <span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <div class='base'>
+                <span></span>
+                <div class='face'></div>
+            </div>
+        </div>
+        <div class='longfazers'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1>Loading......</h1>
+    </div>
 
     <!-- CONTENT -->
     <div id="container" class="container">
@@ -67,8 +91,11 @@
                 <div class="item item-type-audio">
                     <div class="item-head-audio"><img class="item-type-icon" src="/static/assets/images/audio.svg"
                             alt="" srcset=""><span class="item-audio-title">小哆啦之歌</span></div>
-                    <div class="item-brief-doc">
-                        云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。</div>
+                    <div class="item-brief-audio">
+                        <audio controls src="/static/assets/audios/example.mp3">
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio></div>
                 </div>
 
                 <!--Image CONTENT -->
@@ -76,7 +103,7 @@
                     <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/image.svg"
                             alt="" srcset=""><span class="item-image-title">云镜Logo</span></div>
                     <div class="item-brief-doc">
-                        <img src="/static/assets/images/CloudMirror.svg" height="200" />
+                        <img src="/static/assets/images/CloudMirror.svg" height="100" />
                     </div>
                 </div>
 
@@ -86,11 +113,11 @@
                             alt="" srcset=""><span class="item-image-title">演示视频</span></div>
                     <div class="item-brief-doc">
                         <video controls="controls" autoplay="autoplay">
-                            <source src="/static/assets/videos/movie.ogg" type="video/ogg" />
-                            <source src="/static/assets/videos/movie.mp4" type="video/mp4" />
-                            <source src="/static/assets/videos/movie.webm" type="video/webm" />
-                            <object data="/static/assets/videos/movie.mp4" width="320" height="240">
-                                <embed width="320" height="240" src="/static/assets/videos/movie.swf" />
+                            <source src="/static/assets/videos/example.ogg" type="video/ogg" />
+                            <source src="/static/assets/videos/example.mp4" type="video/mp4" />
+                            <source src="/static/assets/videos/example.webm" type="video/webm" />
+                            <object data="/static/assets/videos/example.mp4" width="320" height="240">
+                                <embed width="320" height="240" src="/static/assets/videos/example.swf" />
                             </object>
                         </video>
                     </div>
@@ -115,16 +142,21 @@
     <div class="modal fade bd-CloudMirror-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div id="imgDetail" class="modal-content">
-                <img src="" alt="">
+            <div id="fileDetail" class="modal-content">
+                <img src="/static/assets/images/CloudMirror.svg" alt="">
                 <hr>
                 <div class="text-light bg-dark"></div>
             </div>
         </div>
     </div>
 
+    <footer>
+        @CloudMirror2022
+    </footer>
+
     <script src="/static/pkg/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
     <script src="/static/pkg/rowGrid.js-master/jquery.row-grid.min.js"></script>
+    <script src="/static/js/loading.js"></script>
     <script src="/static/js/index.js"></script>
 </body>
 
