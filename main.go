@@ -21,6 +21,6 @@ func main() {
 	routers.ApiRoutersDefault()
 
 	// 启动web服务，监听9090端口
-	fmt.Println("这里是云镜服务中心，云镜已经启动！请打开端口9090查看.")
+	fmt.Println("This is CloudMirror，server is started at http://localhost:9090.")
 	log.Fatal(http.ListenAndServe("localhost:9090", nil))
 }

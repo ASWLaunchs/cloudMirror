@@ -2,97 +2,109 @@ package models
 
 import (
 	"database/sql"
+	"fmt"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
 var DBSQLite *sql.DB
 
-//sqlite初始化
-func init() {
-	db, err := sql.Open("sqlite3", "./data/cloudMirror.db")
+//SQLiteInit() initialization data
+func DBSQLiteInit() {
+	db, err := sql.Open("sqlite3", "./data/cloudMirror.sqlite")
 	checkErr(err)
 	DBSQLite = db
 	//表的创建 > bid (block id 区块ID) / fid (file id 文件ID) / filename (文件名字) / pathname (路径名字) / created_time (创建时间)
 	var sql string
-	//创建文档表
+	//Block table
+	sql = `
+	CREATE TABLE IF NOT EXISTS block(
+		bid VARCHAR(64) PRIMARY KEY
+	);
+	`
+	db.Exec(sql)
+
+	//document table
 	sql = `
 	CREATE TABLE IF NOT EXISTS documents(
 		bid VARCHAR(64) PRIMARY KEY,
-		fid VARCHAR(64),
-		filename VARCHAR(255) NULL,
-		pathname VARCHAR(4096) NULL,
-		created_time DATETIME NULL
+		fid VARCHAR(64) NOT NULL,
+		filename VARCHAR(255) NOT NULL,
+		pathname VARCHAR(4096) NOT NULL,
+		created_time DATETIME NOT NULL,
+		filesize int NOT NULL
 	);
 	`
 	db.Exec(sql)
 
-	//创建音乐表
+	//audio table
 	sql = `
 	CREATE TABLE IF NOT EXISTS audios(
 		bid VARCHAR(64) PRIMARY KEY,
-		fid VARCHAR(64),
-		filename VARCHAR(255) NULL,
-		pathname VARCHAR(4096) NULL,
-		created_time DATETIME NULL
+		fid VARCHAR(64) NOT NULL,
+		filename VARCHAR(255) NOT NULL,
+		pathname VARCHAR(4096) NOT NULL,
+		created_time DATETIME NOT NULL,
+		filesize int NOT NULL
 	);
 	`
 	db.Exec(sql)
 
-	//创建图片表
+	//image table
 	sql = `
 	 CREATE TABLE IF NOT EXISTS images(
-		 bid VARCHAR(64) PRIMARY KEY,
-		 fid VARCHAR(64),
-		 filename VARCHAR(255) NULL,
-		 pathname VARCHAR(4096) NULL,
-		 created_time DATETIME NULL
+		bid VARCHAR(64) PRIMARY KEY,
+		fid VARCHAR(64) NOT NULL,
+		filename VARCHAR(255) NOT NULL,
+		pathname VARCHAR(4096) NOT NULL,
+		created_time DATETIME NOT NULL,
+		filesize int NOT NULL
 	 );
 	 `
 	db.Exec(sql)
 
-	//创建视频表
+	//video table
 	sql = `
 	CREATE TABLE IF NOT EXISTS videos(
 		bid VARCHAR(64) PRIMARY KEY,
-		fid VARCHAR(64),
-		filename VARCHAR(255) NULL,
-		pathname VARCHAR(4096) NULL,
-		created_time DATETIME NULL
-	);
-	`
+		fid VARCHAR(64) NOT NULL,
+		filename VARCHAR(255) NOT NULL,
+		pathname VARCHAR(4096) NOT NULL,
+		created_time DATETIME NOT NULL,
+		filesize int NOT NULL
+	);`
 	db.Exec(sql)
 }
 
-//checkErr用于错误检测
+//checkErr() can check err.
 func checkErr(err error) {
 	if err != nil {
 		panic(err)
+	} else {
+		fmt.Println("🥥SQLite was initialized successfully")
 	}
 }
 
 //DBSQLiteInsert()用于插入数据
-func DBSQLiteInsert(pathname string, createdTime string) {
-	stmt, err := DBSQLite.Prepare("INSERT INTO userinfo(pathname, created_time) values(?,?)")
+func DBSQLiteInsert(bid string, fid string, filename string, pathname string, createdTime string) {
+	stmt, err := DBSQLite.Prepare("INSERT INTO userinfo(bid, fid, filename, pathname, created_time) values(?,?,?,?,?)")
 	checkErr(err)
 
 	res, err := stmt.Exec(pathname, createdTime)
 	checkErr(err)
-	affect, err := res.RowsAffected()
+	affect, _ := res.RowsAffected()
 	if affect > 0 {
-
+		fmt.Println("")
 	} else {
-
+		fmt.Println("")
 	}
 }
 
 //DBSQLiteDelete()用于删除数据
-func DBSQLiteDelete(bid string, pathname string, createdTime string) {
-
-}
+func DBSQLiteDelete(bid string, fid string, filename string, pathname string, createdTime string) {}
 
 //DBSQLiteUpdate()用于更新数据
-func DBSQLiteUpdate(pathname string, createdTime string) {
+func DBSQLiteUpdate(bid string, fid string, filename string, pathname string, createdTime string) {
 	stmt, err := DBSQLite.Prepare("update userinfo set pathname=? where created_time=?")
 	checkErr(err)
 
@@ -109,7 +121,17 @@ func DBSQLiteUpdate(pathname string, createdTime string) {
 	}
 }
 
-//DBSQLiteQuery()用于查询数据
-func DBSQLiteQuery() {
+//DBSQLiteQuery() use to query data.
+func DBSQLiteQuery(bid string, fid string, filename string, pathname string, createdTime string) {
+	stmt, err := DBSQLite.Prepare("SELECT * From userinfo where bid=? or description=? or tag=? )")
+	checkErr(err)
 
+	res, err := stmt.Exec(bid, fid, filename, pathname, createdTime)
+	checkErr(err)
+	affect, _ := res.RowsAffected()
+	if affect > 0 {
+		fmt.Println(res)
+	} else {
+		fmt.Println("")
+	}
 }

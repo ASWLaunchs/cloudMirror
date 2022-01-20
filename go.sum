@@ -1,2 +1,4 @@
 github.com/mattn/go-sqlite3 v1.14.10 h1:MLn+5bFRlWMGoSRmJour3CL1w/qL96mvipqpwQW/Sfk=
 github.com/mattn/go-sqlite3 v1.14.10/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
+github.com/rendyfebry/go-hls-transcoder v1.0.3 h1:zwKEb4l48wY9RGltj/GjBzw7CScC6+YZG9Xxlr+O7pM=
+github.com/rendyfebry/go-hls-transcoder v1.0.3/go.mod h1:hAnw1pqwpgGChDlzHq0bGtQ6yefOuAKqCWNmaL/O7AU=

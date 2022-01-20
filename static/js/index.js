@@ -9,6 +9,8 @@ $(function () {
     });
     //获取图像
     // func.getImgData()
+
+    func.getAll()
 })
 
 var func = {
@@ -34,12 +36,12 @@ var func = {
             $("#container").rowGrid("appended");
         })
     },
-    //文件详情
+    //fileDetail() support file detail that display on modal content.
     fileDetail: function (e, bid, fid, fileType, created_time) {
         let content = null
         switch (fileType) {
             case "doc":
-                content = func.getDoc(bid, fid, fileType, created_time)
+                content = func.getDoc(e, bid, fid, fileType, created_time)
                 break;
             case "audio":
                 content = func.getAudio(e, bid, fid, fileType, created_time)
@@ -55,13 +57,44 @@ var func = {
         }
         $("#fileDetail").html(content)
     },
+    //getQueryVariable() gets url params based on the url string.
+    //if can't get nothing , then return false.
+    getQueryVariable: function (variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    },
+    //getAll() gets any type file about search key.
+    //all files info.
+    getAll() {
+        let keyWord = getQueryVariable(w)
+        if (!keyWord) {
+            $("#searchResult").html()
+        } else {
+            $.get("/search", {
+                "w": keyWord
+            }).done(function (data) {
+                $("#searchResult").html()
+                console.log(data)
+            })
+        }
+    },
     //getDoc() 用于获取文档内容
     getDoc(fid) {
         $.get("/getDoc", {
-            "fid": fid
+            "w": keyWord
         }).done(function (data) {
             if (data.status) {
                 let content = `
+                <div class="previewContent">
+                    Nothing
+                </div>
                 <hr>
                 <div class="text-light bg-dark">
                     <p>URL:${e.target.src}</p>
@@ -73,11 +106,10 @@ var func = {
         })
         return content
     },
-
     //getImage() 用于获取图像内容
     getImage(fid) {
         $.get("/getImage", {
-            "fid": fid
+            "w": keyWord
         }).done(function (data) {
             if (data.status) {
                 let content = `

@@ -1,0 +1,96 @@
+.tech-switch {
+  padding: 8px 0 0;
+  display: block;
+}
+
+/* make radio buttons work the same way in Firefox and Chrome */
+[type="radio"] {
+  min-width: 0;
+}
+
+.container {
+  display: flex;
+  align-content: stretch;
+}
+#fixture {
+  flex: 1 1 66%;
+}
+#segment-metadata {
+  list-style: none;
+  flex: 0 1 33%;
+  padding: 0;
+  max-width: 33%;
+}
+#segment-metadata pre {
+  overflow: scroll;
+  background-color: lightgray;
+  padding: 0.5em;
+}
+
+.player-stats, .event-counts, #quality-levels {
+  box-sizing: border-box;
+  padding: 8px;
+  float: left;
+  width: 33%;
+}
+
+h3.bitrate-switching {
+  clear: both;
+}
+
+.axis text,
+.cue text {
+  font: 12px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #111;
+}
+
+.bitrates {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.cue {
+  width: 20px;
+  height: 20px;
+}
+.cue text {
+  display: none;
+}
+.cue:hover text {
+  display: block;
+}
+
+.intersect {
+  fill: none;
+  stroke: #111;
+  stroke-dasharray: 2,2;
+}
+
+
+.quality-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+.quality-buttons button {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.quality-buttons button.enabled {
+  background: SkyBlue;
+}
+
+.quality-buttons button.selected {
+  background: SpringGreen;
+}
+
+.quality-buttons button.disabled {
+  background: red;
+}

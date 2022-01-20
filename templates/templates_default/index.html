@@ -44,6 +44,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">统计</a>
                 </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="/static/assets/images/filter.svg" alt="" srcset=""
+                                style="width: 20px;transform: translateY(-1px);"></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">最新</a>
+                            <a class="dropdown-item" href="#">最旧</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">1个月内</a>
+                            <a class="dropdown-item" href="#">6个月内</a>
+                            <a class="dropdown-item" href="#">12个月内</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item active" href="#">默认</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
@@ -80,51 +97,76 @@
         <!-- Text CONTENT -->
         <div class="row">
             <div class="col-sm-6 col-md-5 col-lg-6">
-                <div class="item item-type-doc">
-                    <div class="item-head-doc"><img class="item-type-icon" src="/static/assets/images/doc.svg" alt=""
-                            srcset=""><span class="item-doc-title">什么是云镜？</span></div>
-                    <div class="item-brief-doc">
-                        云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。</div>
-                </div>
+                <div id="searchResult">
+                    <div class="item item-type-doc">
+                        <div class="item-head-doc">
+                            <img class="item-type-icon" src="/static/assets/images/doc.svg" alt="" srcset="">
+                            <span class="item-doc-title">什么是云镜？</span>
 
-                <!-- Music CONTENT -->
-                <div class="item item-type-audio">
-                    <div class="item-head-audio"><img class="item-type-icon" src="/static/assets/images/audio.svg"
-                            alt="" srcset=""><span class="item-audio-title">小哆啦之歌</span></div>
-                    <div class="item-brief-audio">
-                        <audio controls src="/static/assets/audios/example.mp3">
-                            Your browser does not support the
-                            <code>audio</code> element.
-                        </audio></div>
-                </div>
-
-                <!--Image CONTENT -->
-                <div class="item item-type-image" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
-                    <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/image.svg"
-                            alt="" srcset=""><span class="item-image-title">云镜Logo</span></div>
-                    <div class="item-brief-doc">
-                        <img src="/static/assets/images/CloudMirror.svg" height="100" />
+                        </div>
+                        <div class="item-brief-doc">
+                            云镜，英文名CloudMirror(简称CM)，是一款站内资源搜索引擎，能够搜索文本，图片，视频，音乐，软件依赖包等资源，可自定义资源类型，扩展度高。
+                        </div>
+                        <div class="item-tail">
+                            <button type="button" class="btn btn-link btn-sm" data-toggle="modal"
+                                data-target=".bd-CloudMirror-modal-lg">预览</button>
+                            <button type="button" class="btn btn-link btn-sm">下载</button>
+                        </div>
                     </div>
-                </div>
 
-                <!--Video CONTENT -->
-                <div class="item item-type-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
-                    <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/video.svg"
-                            alt="" srcset=""><span class="item-image-title">演示视频</span></div>
-                    <div class="item-brief-doc">
-                        <video controls="controls" autoplay="autoplay">
-                            <source src="/static/assets/videos/example.ogg" type="video/ogg" />
-                            <source src="/static/assets/videos/example.mp4" type="video/mp4" />
-                            <source src="/static/assets/videos/example.webm" type="video/webm" />
-                            <object data="/static/assets/videos/example.mp4" width="320" height="240">
-                                <embed width="320" height="240" src="/static/assets/videos/example.swf" />
-                            </object>
-                        </video>
+                    <!-- Music CONTENT -->
+                    <div class="item item-type-audio">
+                        <div class="item-head-audio"><img class="item-type-icon" src="/static/assets/images/audio.svg"
+                                alt="" srcset=""><span class="item-audio-title">小哆啦之歌</span></div>
+                        <div class="item-brief-audio">
+                            <audio controls src="/static/assets/audios/example.mp3">
+                                Your browser does not support the
+                                <code>audio</code> element.
+                            </audio></div>
+                        <div class="item-tail">
+                            <button type="button" class="btn btn-link btn-sm" data-toggle="modal"
+                                data-target=".bd-CloudMirror-modal-lg">预览</button>
+                            <button type="button" class="btn btn-link btn-sm">下载</button>
+                        </div>
+                    </div>
+
+                    <!--Image CONTENT -->
+                    <div class="item item-type-image" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                        <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/image.svg"
+                                alt="" srcset=""><span class="item-image-title">云镜Logo</span></div>
+                        <div class="item-brief-doc">
+                            <img src="/static/assets/images/CloudMirror.svg" height="100" />
+                        </div>
+                        <div class="item-tail">
+                            <button type="button" class="btn btn-link btn-sm" class="btn btn-link btn-sm">预览</button>
+                            <button type="button" class="btn btn-link btn-sm">下载</button>
+                        </div>
+                    </div>
+
+                    <!--Video CONTENT -->
+                    <div class="item item-type-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                        <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/video.svg"
+                                alt="" srcset=""><span class="item-image-title">演示视频</span></div>
+                        <div class="item-brief-doc">
+                            <video controls="controls" autoplay="autoplay">
+                                <source src="/static/assets/videos/example.ogg" type="video/ogg" />
+                                <source src="/static/assets/videos/example.mp4" type="video/mp4" />
+                                <source src="/static/assets/videos/example.webm" type="video/webm" />
+                                <object data="/static/assets/videos/example.mp4" width="320" height="240">
+                                    <embed width="320" height="240" src="/static/assets/videos/example.swf" />
+                                </object>
+                            </video>
+                        </div>
+                        <div class="item-tail">
+                            <button type="button" class="btn btn-link btn-sm" class="btn btn-link btn-sm">预览</button>
+                            <button type="button" class="btn btn-link btn-sm">下载</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0"></div>
         </div>
+
         <!-- 按钮组 -->
         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
