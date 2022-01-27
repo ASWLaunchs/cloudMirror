@@ -10,6 +10,9 @@ import (
 	"syscall"
 )
 
+type ModelsFileInfo struct {
+}
+
 type NodeFileInfo struct {
 	fid         string
 	filename    string
@@ -22,7 +25,7 @@ type NodeFileInfo struct {
 //FileInfo() gets infomation according to file path.
 //file category are : doc , image , audio , video .
 //return file category, file name, file size, file created time.
-func FileInfo(fileCategory string, fileDir string) *NodeFileInfo {
+func (c ModelsFileInfo) fileInfo(fileCategory string, fileDir string) *NodeFileInfo {
 	//judege file category format is correct or not.
 	judgeFileCategory(fileCategory)
 
@@ -60,7 +63,7 @@ func FileInfo(fileCategory string, fileDir string) *NodeFileInfo {
 			tail = &nodeFileInfo
 		}
 	}
-	fmt.Println("The total number of files in the current directory is:", len(fileInfoList))
+	fmt.Printf("The total number of files in the current directory(%s) is: %d.\n", fileDir, len(fileInfoList))
 	return head
 }
 

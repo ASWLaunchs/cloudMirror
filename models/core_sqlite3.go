@@ -8,12 +8,15 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+type ModelsCoreSQLite struct{}
+
 var DBSQLite *sql.DB
 
 //SQLiteInit() initialization data
 func DBSQLiteInit() {
 	db, err := sql.Open("sqlite3", "./data/cloudMirror.sqlite")
 	checkErr(err)
+	fmt.Println("🥥 SQLite was initialized successfully.")
 	DBSQLite = db
 	//table > fid (file id ) / tag / filename / pathname  / created_time / filesize
 	var sql string
@@ -74,19 +77,17 @@ func DBSQLiteInit() {
 func checkErr(err error) {
 	if err != nil {
 		panic(err)
-	} else {
-		fmt.Println("🥥SQLite was initialized successfully")
 	}
 }
 
 //DBSQLiteInsert() insert newer data into sqlite3.
 //fileDir such as : static/assets/docs.
-func DBSQLiteInsert(fileCategory string, fileDir string) {
+func (c ModelsCoreSQLite) DBSQLiteInsert(fileCategory string, fileDir string) {
 	//insert new data.
 	var sql string = `INSERT INTO ` + fileCategory + `( fid, filename, pathname, created_time, filesize) SELECT ?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM ` + fileCategory + ` WHERE fid = ?) `
 	//read linked list.
 	var nodeFileInfo *NodeFileInfo
-	nodeFileInfo = FileInfo(fileCategory, fileDir)
+	nodeFileInfo = ModelsFileInfo{}.fileInfo(fileCategory, fileDir)
 	for nodeFileInfo != nil {
 
 		//prepare sql string.
@@ -98,9 +99,9 @@ func DBSQLiteInsert(fileCategory string, fileDir string) {
 		//feedback result.
 		affect, _ := res.RowsAffected()
 		if affect > 0 {
-			fmt.Println("inserted successfully.")
+			fmt.Printf("inserted in %s successfully.\n", fileCategory)
 		} else {
-			fmt.Println("failed inserting.")
+			fmt.Printf("failed inserting in %s.\n", fileCategory)
 		}
 
 		//Move pointer points down one linked table block
@@ -109,11 +110,11 @@ func DBSQLiteInsert(fileCategory string, fileDir string) {
 }
 
 //DBSQLiteDelete() delete those redundant and deprecated data.
-func DBSQLiteDelete(fid string, tag string, filename string, pathname string, createdTime string) {
+func (c ModelsCoreSQLite) DBSQLiteDelete(fid string, tag string, filename string, pathname string, createdTime string) {
 }
 
 //DBSQLiteUpdate() update existed data.
-func DBSQLiteUpdate(fid string, tag string, filename string, pathname string, createdTime string) {
+func (c ModelsCoreSQLite) DBSQLiteUpdate(fid string, tag string, filename string, pathname string, createdTime string) {
 	stmt, err := DBSQLite.Prepare("update userinfo set pathname=? where created_time=?")
 	checkErr(err)
 
@@ -134,7 +135,7 @@ func DBSQLiteUpdate(fid string, tag string, filename string, pathname string, cr
 }
 
 //DBSQLiteQuery() be used to query data.
-func DBSQLiteQuery(fid string, tag string, filename string, createdTime string) []byte {
+func (c ModelsCoreSQLite) DBSQLiteQuery(fid string, tag string, filename string, createdTime string) []byte {
 	fmt.Println("ok")
 	stmt, err := DBSQLite.Prepare("SELECT * FROM documents where fid like '%?%' or tag like '%?%' or filename like '%?%' or created_time like '%?%')")
 	checkErr(err)
