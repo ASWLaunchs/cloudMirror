@@ -28,10 +28,10 @@ func (Statistics) TableStatistics() string {
 //table Resource
 type Resource struct {
 	Fid         string `json:"fid"`
-	Filename    string `json:"filename"`
 	Tag         string `json:"tag"`
+	Filename    string `json:"filename"`
 	Pathname    string `json:"pathname"`
-	CreatedTime int    `json:"created_time"`
+	CreatedTime string `json:"created_time"`
 	Filesize    int    `json:"filesize"`
 }
 

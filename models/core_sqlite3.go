@@ -87,7 +87,7 @@ func checkErr(err error) {
 //fileDir such as : static/assets/docs.
 func (c ModelsCoreSQLite) DBSQLiteInsert(fileCategory string, fileDir string) {
 	//insert new data.
-	sqlStmt = `INSERT INTO ` + fileCategory + `( fid, filename, pathname, created_time, filesize) SELECT ?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM ` + fileCategory + ` WHERE fid = ?) `
+	sqlStmt = `INSERT INTO ` + fileCategory + `( fid, filename, tag, pathname, created_time, filesize) SELECT ?,?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM ` + fileCategory + ` WHERE fid = ?) `
 	//read linked list.
 	var nodeFileInfo *NodeFileInfo
 	nodeFileInfo = ModelsFileInfo{}.fileInfo(fileCategory, fileDir)
@@ -96,7 +96,7 @@ func (c ModelsCoreSQLite) DBSQLiteInsert(fileCategory string, fileDir string) {
 		//prepare sql string.
 		stmt, err := DBSQLite.Prepare(sqlStmt)
 		checkErr(err)
-		res, err := stmt.Exec(nodeFileInfo.fid, nodeFileInfo.filename, nodeFileInfo.filepath, nodeFileInfo.createdTime, nodeFileInfo.filesize, nodeFileInfo.fid)
+		res, err := stmt.Exec(nodeFileInfo.fid, nodeFileInfo.filename, "", nodeFileInfo.filepath, nodeFileInfo.createdTime, nodeFileInfo.filesize, nodeFileInfo.fid)
 		checkErr(err)
 
 		//feedback result.
@@ -212,8 +212,8 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 		rows, err := stmt.Query()
 		checkErr(err)
 
+		var count int
 		for rows.Next() {
-			var count int
 			rows.Scan(&count)
 			result = append(result, Statistics{v, count})
 		}
@@ -224,18 +224,24 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 //DBSQLiteQueryOf() -> default query all .
 func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string) []Resource {
 	var result = make([]Resource, 0)
-	sqlStmt = `SELECT * FROM ` + category + ` ORDER BY fid limit 10`
+	sqlStmt = `SELECT fid , tag, filename, pathname,created_time, filesize FROM ` + category + ` ORDER BY fid limit 10`
 	//prepare sql string.
 	stmt, err := DBSQLite.Prepare(sqlStmt)
 	checkErr(err)
 	rows, err := stmt.Query()
 	checkErr(err)
 
+	var fid, filename, tag, pathname, createdTime string
+	var filesize int
 	for rows.Next() {
-		var fid, filename, tag, pathname string
-		var createdTime, filesize int
-		rows.Scan(&fid, &filename, &tag, &pathname, &createdTime, &filesize)
-		result = append(result, Resource{fid, filename, tag, pathname, createdTime, filesize})
+		rows.Scan(&fid, &tag, &filename, &pathname, &createdTime, &filesize)
+		result = append(result, Resource{fid, tag, filename, pathname, createdTime, filesize})
 	}
+	// var fid, filename, pathname string
+	// var filesize int
+	// for rows.Next() {
+	// 	rows.Scan(&fid, &filename, &pathname, &filesize)
+	// 	result = append(result, Resource{fid, "", filename, pathname, 0, filesize})
+	// }
 	return result
 }
