@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"log"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -12,7 +13,6 @@ type ModelsCoreSQLite struct{}
 
 var DBSQLite *sql.DB
 var stmt *sql.Stmt
-var res sql.Result
 var err error
 var sqlStmt string
 
@@ -102,9 +102,9 @@ func (c ModelsCoreSQLite) DBSQLiteInsert(fileCategory string, fileDir string) {
 		//feedback result.
 		affect, _ := res.RowsAffected()
 		if affect > 0 {
-			fmt.Printf("inserted in %s successfully.\n", fileCategory)
+			log.Printf("inserted in %s successfully.\n", fileCategory)
 		} else {
-			fmt.Printf("failed inserting in %s.\n", fileCategory)
+			log.Printf("failed inserting in %s.\n", fileCategory)
 		}
 
 		//Move pointer points down one linked table block
@@ -141,6 +141,7 @@ func (c ModelsCoreSQLite) DBSQLiteUpdate(fid string, tag string, filename string
 //searching by file category when fileCategory isn't null.
 //all searching.
 func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag string, filename string, createdTime string) []byte {
+	var res sql.Result
 	if len(filename) > 0 {
 		//preset sql statement.
 		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' "
@@ -198,4 +199,43 @@ func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag str
 	fmt.Println(rs)
 	DBSQLite.Close()
 	return rs
+}
+
+//DBSQLiteQueryStatistics()
+func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistics {
+	var result = make([]Statistics, 0)
+	for _, v := range category {
+		sqlStmt = `SELECT count(*) FROM ` + v
+		//prepare sql string.
+		stmt, err := DBSQLite.Prepare(sqlStmt)
+		checkErr(err)
+		rows, err := stmt.Query()
+		checkErr(err)
+
+		for rows.Next() {
+			var count int
+			rows.Scan(&count)
+			result = append(result, Statistics{v, count})
+		}
+	}
+	return result
+}
+
+//DBSQLiteQueryOf() -> default query all .
+func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string) []Resource {
+	var result = make([]Resource, 0)
+	sqlStmt = `SELECT * FROM ` + category + ` ORDER BY fid limit 10`
+	//prepare sql string.
+	stmt, err := DBSQLite.Prepare(sqlStmt)
+	checkErr(err)
+	rows, err := stmt.Query()
+	checkErr(err)
+
+	for rows.Next() {
+		var fid, filename, tag, pathname string
+		var createdTime, filesize int
+		rows.Scan(&fid, &filename, &tag, &pathname, &createdTime, &filesize)
+		result = append(result, Resource{fid, filename, tag, pathname, createdTime, filesize})
+	}
+	return result
 }

@@ -1,0 +1,5 @@
+2022/02/14 02:24:29 CMLog is working!
+2022/02/14 02:24:29 the CM server was start!
+2022/02/14 02:24:29 listen tcp 127.0.0.1:9090: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2022/02/14 02:24:36 CMLog is working!
+2022/02/14 02:24:36 the CM server was start!

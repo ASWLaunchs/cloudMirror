@@ -14,7 +14,7 @@ func (c ControllerSearch) Search(w http.ResponseWriter, r *http.Request) {
 	filename := q.Get("w")
 	createdTime := ""
 	// fmt.Println(models.ModelsCoreSQLite{}.DBSQLiteQuery("documents", fid, tag, filename, createdTime))
-	w.WriteHeader(400)
 	fmt.Println(fid, tag, filename, createdTime)
+	w.WriteHeader(200)
 	w.Write([]byte{1})
 }

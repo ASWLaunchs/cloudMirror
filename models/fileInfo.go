@@ -3,7 +3,6 @@ package models
 import (
 	"crypto/sha256"
 	"encoding/hex"
-	"fmt"
 	"io/fs"
 	"io/ioutil"
 	"log"
@@ -39,7 +38,6 @@ func (c ModelsFileInfo) fileInfo(fileCategory string, fileDir string) *NodeFileI
 	var head = new(NodeFileInfo)
 	var tail *NodeFileInfo //create tail while initialize first linked list address.
 	for i := range fileInfoList {
-		fmt.Println(fileInfoList[i].Name())
 		//initialize first node.
 		if i == 0 {
 			head = &NodeFileInfo{
@@ -63,7 +61,7 @@ func (c ModelsFileInfo) fileInfo(fileCategory string, fileDir string) *NodeFileI
 			tail = &nodeFileInfo
 		}
 	}
-	fmt.Printf("The total number of files in the current directory(%s) is: %d.\n", fileDir, len(fileInfoList))
+	log.Printf("The total number of files in the current directory(%s) is: %d.\n", fileDir, len(fileInfoList))
 	return head
 }
 

@@ -2,6 +2,8 @@ package controllers_default
 
 import (
 	"cloudMirror/models"
+	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -16,4 +18,9 @@ func (c ControllerStatistics) Statistics(w http.ResponseWriter, r *http.Request)
 	defer models.ModelsCoreSQLite{}.DBSQLiteInsert("audios", "static/assets/audios")  //audios
 	defer models.ModelsCoreSQLite{}.DBSQLiteInsert("images", "static/assets/images")  //images
 	defer models.ModelsCoreSQLite{}.DBSQLiteInsert("videos", "static/assets/videos")  //videos
+	fmt.Println("statistics is working.")
+	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryStatistics([]string{"documents", "images", "audios", "videos"})
+	res2, _ := json.Marshal(res1)
+	w.WriteHeader(200)
+	w.Write(res2)
 }

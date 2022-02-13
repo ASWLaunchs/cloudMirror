@@ -2,6 +2,7 @@
 package main
 
 import (
+	"cloudMirror/models"
 	"cloudMirror/routers"
 	"fmt"
 	"log"
@@ -22,5 +23,7 @@ func main() {
 
 	// 启动web服务，监听9090端口
 	fmt.Println("This is CloudMirror，server is started at http://localhost:9090.")
+	models.CMLog() //start logs server.
+	log.Println("the CM server was start!")
 	log.Fatal(http.ListenAndServe("localhost:9090", nil))
 }
