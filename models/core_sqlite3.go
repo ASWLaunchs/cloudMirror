@@ -11,6 +11,10 @@ import (
 type ModelsCoreSQLite struct{}
 
 var DBSQLite *sql.DB
+var stmt *sql.Stmt
+var res sql.Result
+var err error
+var sqlStmt string
 
 //SQLiteInit() initialization data
 func DBSQLiteInit() {
@@ -18,11 +22,10 @@ func DBSQLiteInit() {
 	checkErr(err)
 	fmt.Println("🥥 SQLite was initialized successfully.")
 	DBSQLite = db
-	//table > fid (file id ) / tag / filename / pathname  / created_time / filesize
-	var sql string
 
+	//table > fid (file id ) / tag / filename / pathname  / created_time / filesize
 	//document table
-	sql = `
+	sqlStmt = `
 	CREATE TABLE IF NOT EXISTS documents(
 		fid VARCHAR(64) PRIMARY KEY,
 		tag VARCHAR(255) NULL,
@@ -32,10 +35,10 @@ func DBSQLiteInit() {
 		filesize int NOT NULL
 	);
 	`
-	db.Exec(sql)
+	db.Exec(sqlStmt)
 
 	//audio table
-	sql = `
+	sqlStmt = `
 	CREATE TABLE IF NOT EXISTS audios(
 		fid VARCHAR(64) PRIMARY KEY,
 		tag VARCHAR(255) NULL,
@@ -45,10 +48,10 @@ func DBSQLiteInit() {
 		filesize int NOT NULL
 	);
 	`
-	db.Exec(sql)
+	db.Exec(sqlStmt)
 
 	//image table
-	sql = `
+	sqlStmt = `
 	 CREATE TABLE IF NOT EXISTS images(
 		fid VARCHAR(64) PRIMARY KEY,
 		tag VARCHAR(255) NULL,
@@ -58,10 +61,10 @@ func DBSQLiteInit() {
 		filesize int NOT NULL
 	 );
 	 `
-	db.Exec(sql)
+	db.Exec(sqlStmt)
 
 	//video table
-	sql = `
+	sqlStmt = `
 	CREATE TABLE IF NOT EXISTS videos(
 		fid VARCHAR(64) PRIMARY KEY,
 		tag VARCHAR(255) NULL,
@@ -70,7 +73,7 @@ func DBSQLiteInit() {
 		created_time DATETIME NOT NULL,
 		filesize int NOT NULL
 	);`
-	db.Exec(sql)
+	db.Exec(sqlStmt)
 }
 
 //checkErr() can check err.
@@ -84,14 +87,14 @@ func checkErr(err error) {
 //fileDir such as : static/assets/docs.
 func (c ModelsCoreSQLite) DBSQLiteInsert(fileCategory string, fileDir string) {
 	//insert new data.
-	var sql string = `INSERT INTO ` + fileCategory + `( fid, filename, pathname, created_time, filesize) SELECT ?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM ` + fileCategory + ` WHERE fid = ?) `
+	sqlStmt = `INSERT INTO ` + fileCategory + `( fid, filename, pathname, created_time, filesize) SELECT ?,?,?,?,? WHERE NOT EXISTS(SELECT 1 FROM ` + fileCategory + ` WHERE fid = ?) `
 	//read linked list.
 	var nodeFileInfo *NodeFileInfo
 	nodeFileInfo = ModelsFileInfo{}.fileInfo(fileCategory, fileDir)
 	for nodeFileInfo != nil {
 
 		//prepare sql string.
-		stmt, err := DBSQLite.Prepare(sql)
+		stmt, err := DBSQLite.Prepare(sqlStmt)
 		checkErr(err)
 		res, err := stmt.Exec(nodeFileInfo.fid, nodeFileInfo.filename, nodeFileInfo.filepath, nodeFileInfo.createdTime, nodeFileInfo.filesize, nodeFileInfo.fid)
 		checkErr(err)
@@ -135,12 +138,40 @@ func (c ModelsCoreSQLite) DBSQLiteUpdate(fid string, tag string, filename string
 }
 
 //DBSQLiteQuery() be used to query data.
-func (c ModelsCoreSQLite) DBSQLiteQuery(fid string, tag string, filename string, createdTime string) []byte {
-	fmt.Println("ok")
-	stmt, err := DBSQLite.Prepare("SELECT * FROM documents where fid like '%?%' or tag like '%?%' or filename like '%?%' or created_time like '%?%')")
-	checkErr(err)
-	res, err := stmt.Exec(fid, tag, filename, createdTime)
-	checkErr(err)
+//searching by file category when fileCategory isn't null.
+//all searching.
+func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag string, filename string, createdTime string) []byte {
+	if len(filename) > 0 {
+		//preset sql statement.
+		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' "
+		stmt, err = DBSQLite.Prepare(sqlStmt)
+		checkErr(err)
+
+		//execute sql statement.
+		res, err = stmt.Exec(fid, tag, filename, createdTime)
+		checkErr(err)
+	} else if len(filename) > 0 && len(tag) > 0 { //tag method.
+		//preset sql statement.
+		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' and tag like '%?%' "
+		stmt, err = DBSQLite.Prepare(sqlStmt)
+		checkErr(err)
+
+		//execute sql statement.
+		res, err = stmt.Exec(fid, tag, filename, createdTime)
+		checkErr(err)
+	} else if len(filename) > 0 && len(createdTime) > 0 { //time method.
+		//preset sql statement.
+		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' and created_time < ?"
+		stmt, err = DBSQLite.Prepare(sqlStmt)
+		checkErr(err)
+
+		//execute sql statement.
+		res, err = stmt.Exec(fid, tag, filename, createdTime)
+		checkErr(err)
+	} else if len(fid) > 0 { //fid method.
+		sqlStmt = "SELECT * FROM " + fileCategory + " where fid = ?"
+	}
+
 	affect, _ := res.RowsAffected()
 	var rs []byte
 	if affect > 0 {
@@ -149,7 +180,9 @@ func (c ModelsCoreSQLite) DBSQLiteQuery(fid string, tag string, filename string,
 			Fid:         "",
 			Tag:         "",
 			Filename:    "",
+			Pathname:    "",
 			CreatedTime: "",
+			Filesize:    "",
 		})
 	} else {
 		rs, _ = json.Marshal(SearchResult{
@@ -157,7 +190,9 @@ func (c ModelsCoreSQLite) DBSQLiteQuery(fid string, tag string, filename string,
 			Fid:         "",
 			Tag:         "",
 			Filename:    "",
+			Pathname:    "",
 			CreatedTime: "",
+			Filesize:    "",
 		})
 	}
 	fmt.Println(rs)

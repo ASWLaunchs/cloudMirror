@@ -10,7 +10,7 @@ import (
 type ControllerVideo struct{}
 
 func (c ControllerVideo) Video(w http.ResponseWriter, r *http.Request) {
-	ffmpegPath := "packages/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe"
+	ffmpegPath := "E:/env/pkg/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe"
 	srcPath := "static/assets/videos/example.mp4"
 	targetPath := "static/assets/hls"
 	resOptions := []string{"480p"}
