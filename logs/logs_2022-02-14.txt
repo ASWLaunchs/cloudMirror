@@ -2965,3 +2965,2773 @@ created by net/http.(*Server).Serve
 2022/02/14 03:12:57 failed inserting in documents.
 2022/02/14 03:12:57 failed inserting in documents.
 2022/02/14 03:12:57 failed inserting in documents.
+2022/02/14 07:04:04 CMLog is working!
+2022/02/14 07:04:04 the CM server was start!
+2022/02/14 07:04:07 http: panic serving 127.0.0.1:55145: runtime error: invalid memory address or nil pointer dereference
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0000860c0, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0000860c0, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc0000be9a0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc0000be9a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc0000be9a0}, 0xc0000bac00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000092240}, {0xcbce08, 0xc0000be9a0}, 0xc0000bac00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000a8000, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:07 http: panic serving 127.0.0.1:55146: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc000086120, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc000086120, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc0000beb60}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc0000beb60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc0000beb60}, 0xc000144a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105050}, {0xcbce08, 0xc0000beb60}, 0xc000144a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:07 http: panic serving 127.0.0.1:55150: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0002eb6e0, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0002eb6e0, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc000154540}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc000154540}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc000154540}, 0xc0000ba900)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000092780}, {0xcbce08, 0xc000154540}, 0xc0000ba900)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000390000, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:07 http: panic serving 127.0.0.1:55151: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0002eb7a0, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0002eb7a0, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc000154700}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc000154700}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc000154700}, 0xc000388100)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003860c0}, {0xcbce08, 0xc000154700}, 0xc000388100)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000a80a0, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:07 http: panic serving 127.0.0.1:55156: runtime error: invalid memory address or nil pointer dereference
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0003c0060, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0003c0060, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc0003aa1c0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc0003aa1c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc0003aa1c0}, 0xc0000bad00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000092a50}, {0xcbce08, 0xc0003aa1c0}, 0xc0000bad00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068be0, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:09 http: panic serving 127.0.0.1:55157: runtime error: invalid memory address or nil pointer dereference
+goroutine 53 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0000861e0, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0000861e0, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc0000bed20}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc0000bed20}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc0000bed20}, 0xc000144d00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00031d020}, {0xcbce08, 0xc0000bed20}, 0xc000144d00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003901e0, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:10 http: panic serving 127.0.0.1:55161: runtime error: invalid memory address or nil pointer dereference
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbf6600, 0xbaef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xcbe610, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x3, {0xcbe610, 0xc000012040}, {0xc0002eb860, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0xcbe610, 0xc000012040}, {0xc0002eb860, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xc4198e, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0xcbce08, 0xc0001548c0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcbce08, 0xc0001548c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcbce08, 0xc0001548c0}, 0xc0000bae00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000092ba0}, {0xcbce08, 0xc0001548c0}, 0xc0000bae00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000a81e0, {0xcbe680, 0xc000092150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:04:14 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:04:14 failed inserting in videos.
+2022/02/14 07:04:14 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 failed inserting in images.
+2022/02/14 07:04:14 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:04:14 failed inserting in audios.
+2022/02/14 07:04:14 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:04:14 failed inserting in documents.
+2022/02/14 07:04:14 failed inserting in documents.
+2022/02/14 07:04:14 failed inserting in documents.
+2022/02/14 07:04:36 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:04:36 failed inserting in videos.
+2022/02/14 07:04:36 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 failed inserting in images.
+2022/02/14 07:04:36 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:04:36 failed inserting in audios.
+2022/02/14 07:04:36 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:04:36 failed inserting in documents.
+2022/02/14 07:04:36 failed inserting in documents.
+2022/02/14 07:04:36 failed inserting in documents.
+2022/02/14 07:05:19 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:05:19 failed inserting in videos.
+2022/02/14 07:05:19 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 failed inserting in images.
+2022/02/14 07:05:19 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:05:19 failed inserting in audios.
+2022/02/14 07:05:19 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:05:19 failed inserting in documents.
+2022/02/14 07:05:19 failed inserting in documents.
+2022/02/14 07:05:19 failed inserting in documents.
+2022/02/14 07:14:26 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:14:26 failed inserting in videos.
+2022/02/14 07:14:26 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 failed inserting in images.
+2022/02/14 07:14:26 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:14:26 failed inserting in audios.
+2022/02/14 07:14:26 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:14:26 failed inserting in documents.
+2022/02/14 07:14:26 failed inserting in documents.
+2022/02/14 07:14:26 failed inserting in documents.
+2022/02/14 07:15:09 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:15:09 failed inserting in videos.
+2022/02/14 07:15:09 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 failed inserting in images.
+2022/02/14 07:15:09 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:15:09 failed inserting in audios.
+2022/02/14 07:15:09 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:15:09 failed inserting in documents.
+2022/02/14 07:15:09 failed inserting in documents.
+2022/02/14 07:15:09 failed inserting in documents.
+2022/02/14 07:17:14 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:17:14 failed inserting in videos.
+2022/02/14 07:17:14 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 failed inserting in images.
+2022/02/14 07:17:14 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:17:14 failed inserting in audios.
+2022/02/14 07:17:14 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:17:14 failed inserting in documents.
+2022/02/14 07:17:14 failed inserting in documents.
+2022/02/14 07:17:14 failed inserting in documents.
+2022/02/14 07:17:47 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:17:47 failed inserting in videos.
+2022/02/14 07:17:47 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 failed inserting in images.
+2022/02/14 07:17:47 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:17:47 failed inserting in audios.
+2022/02/14 07:17:47 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:17:47 failed inserting in documents.
+2022/02/14 07:17:47 failed inserting in documents.
+2022/02/14 07:17:47 failed inserting in documents.
+2022/02/14 07:19:04 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:19:04 failed inserting in videos.
+2022/02/14 07:19:04 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 failed inserting in images.
+2022/02/14 07:19:04 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:19:04 failed inserting in audios.
+2022/02/14 07:19:04 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:19:04 failed inserting in documents.
+2022/02/14 07:19:04 failed inserting in documents.
+2022/02/14 07:19:04 failed inserting in documents.
+2022/02/14 07:19:09 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:19:09 failed inserting in videos.
+2022/02/14 07:19:09 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 failed inserting in images.
+2022/02/14 07:19:09 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:19:09 failed inserting in audios.
+2022/02/14 07:19:09 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:19:09 failed inserting in documents.
+2022/02/14 07:19:09 failed inserting in documents.
+2022/02/14 07:19:09 failed inserting in documents.
+2022/02/14 07:20:31 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:20:31 failed inserting in videos.
+2022/02/14 07:20:31 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 failed inserting in images.
+2022/02/14 07:20:31 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:20:31 failed inserting in audios.
+2022/02/14 07:20:31 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:20:31 failed inserting in documents.
+2022/02/14 07:20:31 failed inserting in documents.
+2022/02/14 07:20:31 failed inserting in documents.
+2022/02/14 07:22:25 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:22:25 failed inserting in videos.
+2022/02/14 07:22:25 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 failed inserting in images.
+2022/02/14 07:22:25 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:22:25 failed inserting in audios.
+2022/02/14 07:22:25 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:22:25 failed inserting in documents.
+2022/02/14 07:22:25 failed inserting in documents.
+2022/02/14 07:22:25 failed inserting in documents.
+2022/02/14 07:22:46 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:22:46 failed inserting in videos.
+2022/02/14 07:22:46 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 failed inserting in images.
+2022/02/14 07:22:46 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:22:46 failed inserting in audios.
+2022/02/14 07:22:46 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:22:46 failed inserting in documents.
+2022/02/14 07:22:46 failed inserting in documents.
+2022/02/14 07:22:46 failed inserting in documents.
+2022/02/14 07:23:12 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:23:12 failed inserting in videos.
+2022/02/14 07:23:12 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 failed inserting in images.
+2022/02/14 07:23:12 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:23:12 failed inserting in audios.
+2022/02/14 07:23:12 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:23:12 failed inserting in documents.
+2022/02/14 07:23:12 failed inserting in documents.
+2022/02/14 07:23:12 failed inserting in documents.
+2022/02/14 07:23:32 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:23:32 failed inserting in videos.
+2022/02/14 07:23:32 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 failed inserting in images.
+2022/02/14 07:23:32 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:23:32 failed inserting in audios.
+2022/02/14 07:23:32 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:23:32 failed inserting in documents.
+2022/02/14 07:23:32 failed inserting in documents.
+2022/02/14 07:23:32 failed inserting in documents.
+2022/02/14 07:33:39 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:33:39 failed inserting in videos.
+2022/02/14 07:33:39 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 failed inserting in images.
+2022/02/14 07:33:39 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:33:39 failed inserting in audios.
+2022/02/14 07:33:39 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:33:39 failed inserting in documents.
+2022/02/14 07:33:39 failed inserting in documents.
+2022/02/14 07:33:39 failed inserting in documents.
+2022/02/14 07:35:28 CMLog is working!
+2022/02/14 07:35:28 the CM server was start!
+2022/02/14 07:37:16 CMLog is working!
+2022/02/14 07:37:16 the CM server was start!
+2022/02/14 07:37:30 http: panic serving 127.0.0.1:51757: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc000263f20, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc000263f20, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc0000c0c40}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc0000c0c40}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc0000c0c40}, 0xc000384c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105200}, {0x111cfe8, 0xc0000c0c40}, 0xc000384c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068a00, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:30 http: panic serving 127.0.0.1:51756: runtime error: invalid memory address or nil pointer dereference
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc0003e0060, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc0003e0060, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc00039e620}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc00039e620}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc00039e620}, 0xc000384700)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008e090}, {0x111cfe8, 0xc00039e620}, 0xc000384700)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000092000, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:30 http: panic serving 127.0.0.1:51759: runtime error: invalid memory address or nil pointer dereference
+goroutine 70 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc0003e0120, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc0003e0120, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc00039e7e0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc00039e7e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc00039e7e0}, 0xc0000abb00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002ba240}, {0x111cfe8, 0xc00039e7e0}, 0xc0000abb00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068b40, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:30 http: panic serving 127.0.0.1:51765: runtime error: invalid memory address or nil pointer dereference
+goroutine 75 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc00001b860, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc00001b860, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc000155260}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc000155260}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc000155260}, 0xc000384400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003860f0}, {0x111cfe8, 0xc000155260}, 0xc000384400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:30 http: panic serving 127.0.0.1:51766: runtime error: invalid memory address or nil pointer dereference
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc00001b920, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc00001b920, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc000155420}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc000155420}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc000155420}, 0xc000384500)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003861b0}, {0x111cfe8, 0xc000155420}, 0xc000384500)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003b40a0, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:31 http: panic serving 127.0.0.1:51782: runtime error: invalid memory address or nil pointer dereference
+goroutine 79 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x10566c0, 0x100ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x111e7f0, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x4, {0x111e7f0, 0xc000012040}, {0xc0002dc000, 0x60}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xa, {0x111e7f0, 0xc000012040}, {0xc0002dc000, 0x60})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x10a1b55, 0x9})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:229 +0xc8
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x111cfe8, 0xc0000c0e00}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:12 +0x33
+net/http.HandlerFunc.ServeHTTP(0x0, {0x111cfe8, 0xc0000c0e00}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x111cfe8, 0xc0000c0e00}, 0xc000384d00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000386750}, {0x111cfe8, 0xc0000c0e00}, 0xc000384d00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0x111e860, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 07:37:34 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:37:34 failed inserting in videos.
+2022/02/14 07:37:34 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 failed inserting in images.
+2022/02/14 07:37:34 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:37:34 failed inserting in audios.
+2022/02/14 07:37:34 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:37:34 failed inserting in documents.
+2022/02/14 07:37:34 failed inserting in documents.
+2022/02/14 07:37:34 failed inserting in documents.
+2022/02/14 07:39:53 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:39:53 failed inserting in videos.
+2022/02/14 07:39:53 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 failed inserting in images.
+2022/02/14 07:39:53 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:39:53 failed inserting in audios.
+2022/02/14 07:39:53 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:39:53 failed inserting in documents.
+2022/02/14 07:39:53 failed inserting in documents.
+2022/02/14 07:39:53 failed inserting in documents.
+2022/02/14 07:42:57 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:42:57 failed inserting in videos.
+2022/02/14 07:42:57 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 failed inserting in images.
+2022/02/14 07:42:57 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:42:57 failed inserting in audios.
+2022/02/14 07:42:57 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:42:57 failed inserting in documents.
+2022/02/14 07:42:57 failed inserting in documents.
+2022/02/14 07:42:57 failed inserting in documents.
+2022/02/14 07:43:34 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:43:34 failed inserting in videos.
+2022/02/14 07:43:34 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 failed inserting in images.
+2022/02/14 07:43:34 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:43:34 failed inserting in audios.
+2022/02/14 07:43:34 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:43:34 failed inserting in documents.
+2022/02/14 07:43:34 failed inserting in documents.
+2022/02/14 07:43:34 failed inserting in documents.
+2022/02/14 07:44:17 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:44:17 failed inserting in videos.
+2022/02/14 07:44:17 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 failed inserting in images.
+2022/02/14 07:44:17 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:44:17 failed inserting in audios.
+2022/02/14 07:44:17 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:44:17 failed inserting in documents.
+2022/02/14 07:44:17 failed inserting in documents.
+2022/02/14 07:44:17 failed inserting in documents.
+2022/02/14 07:44:33 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:44:33 failed inserting in videos.
+2022/02/14 07:44:33 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 failed inserting in images.
+2022/02/14 07:44:33 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:44:33 failed inserting in audios.
+2022/02/14 07:44:33 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:44:33 failed inserting in documents.
+2022/02/14 07:44:33 failed inserting in documents.
+2022/02/14 07:44:33 failed inserting in documents.
+2022/02/14 07:44:41 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:44:41 failed inserting in videos.
+2022/02/14 07:44:41 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 failed inserting in images.
+2022/02/14 07:44:41 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:44:41 failed inserting in audios.
+2022/02/14 07:44:41 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:44:41 failed inserting in documents.
+2022/02/14 07:44:41 failed inserting in documents.
+2022/02/14 07:44:41 failed inserting in documents.
+2022/02/14 07:46:30 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 07:46:30 failed inserting in videos.
+2022/02/14 07:46:30 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 failed inserting in images.
+2022/02/14 07:46:30 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 07:46:30 failed inserting in audios.
+2022/02/14 07:46:30 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 07:46:30 failed inserting in documents.
+2022/02/14 07:46:30 failed inserting in documents.
+2022/02/14 07:46:30 failed inserting in documents.
+2022/02/14 14:26:37 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:26:37 failed inserting in videos.
+2022/02/14 14:26:37 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 failed inserting in images.
+2022/02/14 14:26:37 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:26:37 failed inserting in audios.
+2022/02/14 14:26:37 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:26:37 failed inserting in documents.
+2022/02/14 14:26:37 failed inserting in documents.
+2022/02/14 14:26:37 failed inserting in documents.
+2022/02/14 14:27:08 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:27:08 failed inserting in videos.
+2022/02/14 14:27:08 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 failed inserting in images.
+2022/02/14 14:27:08 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:27:08 failed inserting in audios.
+2022/02/14 14:27:08 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:27:08 failed inserting in documents.
+2022/02/14 14:27:08 failed inserting in documents.
+2022/02/14 14:27:08 failed inserting in documents.
+2022/02/14 14:27:13 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:27:13 failed inserting in videos.
+2022/02/14 14:27:13 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 failed inserting in images.
+2022/02/14 14:27:13 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:27:13 failed inserting in audios.
+2022/02/14 14:27:13 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:27:13 failed inserting in documents.
+2022/02/14 14:27:13 failed inserting in documents.
+2022/02/14 14:27:13 failed inserting in documents.
+2022/02/14 14:27:17 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:27:17 failed inserting in videos.
+2022/02/14 14:27:17 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 failed inserting in images.
+2022/02/14 14:27:17 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:27:17 failed inserting in audios.
+2022/02/14 14:27:17 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:27:17 failed inserting in documents.
+2022/02/14 14:27:17 failed inserting in documents.
+2022/02/14 14:27:17 failed inserting in documents.
+2022/02/14 14:40:22 CMLog is working!
+2022/02/14 14:40:22 the CM server was start!
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50862: runtime error: invalid memory address or nil pointer dereference
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004077e8, {0x6be850, 0xc000012040}, {0xc0001b82a0, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b82a0, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001ba540}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001ba540}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001ba540}, 0xc0001a4d00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184420}, {0x6bd048, 0xc0001ba540}, 0xc0001a4d00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003360a0, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50855: runtime error: invalid memory address or nil pointer dereference
+goroutine 6 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000677e8, {0x6be850, 0xc000012040}, {0xc0001b83f0, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b83f0, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001ba700}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001ba700}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001ba700}, 0xc00039f100)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105140}, {0x6bd048, 0xc0001ba700}, 0xc00039f100)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50856: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000637e8, {0x6be850, 0xc000012040}, {0xc0001b84d0, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b84d0, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001ba8c0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001ba8c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001ba8c0}, 0xc000145500)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184090}, {0x6bd048, 0xc0001ba8c0}, 0xc000145500)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000188000, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50863: runtime error: invalid memory address or nil pointer dereference
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00033f7e8, {0x6be850, 0xc000012040}, {0xc0001b85b0, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b85b0, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001baa80}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001baa80}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001baa80}, 0xc00039ed00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000386300}, {0x6bd048, 0xc0001baa80}, 0xc00039ed00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50864: runtime error: invalid memory address or nil pointer dereference
+goroutine 67 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0001917e8, {0x6be850, 0xc000012040}, {0xc0001b8690, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b8690, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001bac40}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001bac40}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001bac40}, 0xc0001a4c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184510}, {0x6bd048, 0xc0001bac40}, 0xc0001a4c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:30 http: panic serving 127.0.0.1:50868: runtime error: invalid memory address or nil pointer dereference
+goroutine 69 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000577e8, {0x6be850, 0xc000012040}, {0xc0001b8770, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b8770, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001bae00}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001bae00}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001bae00}, 0xc00039f200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000386510}, {0x6bd048, 0xc0001bae00}, 0xc00039f200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068dc0, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:31 http: panic serving 127.0.0.1:50873: runtime error: invalid memory address or nil pointer dereference
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x5f66c0, 0x5aef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x6be850, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000d97e8, {0x6be850, 0xc000012040}, {0xc0001b8850, 0x63}, 0x5d)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0x64061f, {0x6be850, 0xc000012040}, {0xc0001b8850, 0x63})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x641b5d, 0x9}, {0x0, 0x0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:235 +0x11a
+cloudMirror/controllers/controllers_default.ControllerDocuments.Documents({}, {0x6bd048, 0xc0001bafc0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/documents.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc0001bafc0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc0001bafc0}, 0xc0001a4e00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184b10}, {0x6bd048, 0xc0001bafc0}, 0xc0001a4e00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003b0140, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:32 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:40:37 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:40:43 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:40:48 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:40:54 http: panic serving 127.0.0.1:50874: database is locked
+goroutine 47 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x621a40, 0xc000386d20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x641b5d, 0x9}, {0x645305, 0x12})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000386c60})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640dae, 0x6}, {0x646518, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000386bd0})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640e02, 0x6}, {0x64652c, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000386b10})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640eb0, 0x6}, {0x646540, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x5f6840, 0x6b3c00})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc0004079b0, 0x4, 0xc0004078e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:221 +0x1b2
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0x6bd048, 0xc00039a7e0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc00039a7e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc00039a7e0}, 0xc000145a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105a40}, {0x6bd048, 0xc00039a7e0}, 0xc000145a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000188140, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:40:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:41:00 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:41:05 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:41:11 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:41:16 http: panic serving 127.0.0.1:50892: database is locked
+goroutine 62 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x621a40, 0xc000184ff0})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x641b5d, 0x9}, {0x645305, 0x12})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000184e40})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640dae, 0x6}, {0x646518, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000184db0})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640e02, 0x6}, {0x64652c, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x621a40, 0xc000184cf0})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x640eb0, 0x6}, {0x646540, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x5f6840, 0x6b3c00})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc0000639b0, 0x4, 0xc0000638e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:221 +0x1b2
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0x6bd048, 0xc00015ea80}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0x6bd048, 0xc00015ea80}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x6bd048, 0xc00015ea80}, 0xc0001a4f00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184cc0}, {0x6bd048, 0xc00015ea80}, 0xc0001a4f00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003b0640, {0x6be8c0, 0xc000105050})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:41:16 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:41:22 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:41:27 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:42:17 CMLog is working!
+2022/02/14 14:42:17 the CM server was start!
+2022/02/14 14:42:24 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:42:30 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:42:35 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:42:41 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:42:46 http: panic serving 127.0.0.1:50980: database is locked
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x461a40, 0xc0001810b0})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x481b60, 0x9}, {0x485308, 0x12})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000180ff0})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480db1, 0x6}, {0x48651b, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000180f60})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480e05, 0x6}, {0x48652f, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000180ea0})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480eb3, 0x6}, {0x486543, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x436840, 0x4f3c30})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc0000639b0, 0x4, 0xc0000638e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:221 +0x285
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0x4fd048, 0xc00019ec40}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0x4fd048, 0xc00019ec40}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x4fd048, 0xc00019ec40}, 0xc000183d00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000102030}, {0x4fd048, 0xc00019ec40}, 0xc000183d00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0x4fe900, 0xc000085110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:42:46 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:42:52 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:42:57 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:43:03 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:43:08 http: panic serving 127.0.0.1:50981: database is locked
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x461a40, 0xc000181650})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x481b60, 0x9}, {0x485308, 0x12})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000181590})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480db1, 0x6}, {0x48651b, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000181500})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480e05, 0x6}, {0x48652f, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x461a40, 0xc000181440})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.checkErr(...)
+	E:/var/go/CloudMirror/models/core_sqlite3.go:84
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteInsert({}, {0x480eb3, 0x6}, {0x486543, 0x14})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:102 +0x3a6
+panic({0x436840, 0x4f3c30})
+	E:/env/go/src/runtime/panic.go:1038 +0x215
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc0001679b0, 0x4, 0xc0001678e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:221 +0x285
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0x4fd048, 0xc00019ee00}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0x4fd048, 0xc00019ee00}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0x4fd048, 0xc00019ee00}, 0xc000183700)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000085260}, {0x4fd048, 0xc00019ee00}, 0xc000183700)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068b40, {0x4fe900, 0xc000085110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:43:08 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:05 CMLog is working!
+2022/02/14 14:49:05 the CM server was start!
+2022/02/14 14:49:11 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:11 failed inserting in videos.
+2022/02/14 14:49:11 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 failed inserting in images.
+2022/02/14 14:49:11 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:11 failed inserting in audios.
+2022/02/14 14:49:11 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:11 failed inserting in documents.
+2022/02/14 14:49:11 failed inserting in documents.
+2022/02/14 14:49:11 failed inserting in documents.
+2022/02/14 14:49:48 CMLog is working!
+2022/02/14 14:49:48 the CM server was start!
+2022/02/14 14:49:48 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:48 failed inserting in videos.
+2022/02/14 14:49:48 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 failed inserting in images.
+2022/02/14 14:49:48 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:48 failed inserting in audios.
+2022/02/14 14:49:48 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:48 failed inserting in documents.
+2022/02/14 14:49:48 failed inserting in documents.
+2022/02/14 14:49:48 failed inserting in documents.
+2022/02/14 14:49:48 http: panic serving 127.0.0.1:54554: assignment to entry in nil map
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0000720e0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0000720e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0000720e0}, 0xc00006e000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00001e060}, {0xcad048, 0xc0000720e0}, 0xc00006e000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000094a00, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:49 failed inserting in videos.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:49 failed inserting in audios.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 http: panic serving 127.0.0.1:54555: assignment to entry in nil map
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0000722a0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0000722a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0000722a0}, 0xc00006e200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00001e960}, {0xcad048, 0xc0000722a0}, 0xc00006e200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000094aa0, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:49 failed inserting in videos.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 failed inserting in images.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:49 failed inserting in audios.
+2022/02/14 14:49:49 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 failed inserting in documents.
+2022/02/14 14:49:49 http: panic serving 127.0.0.1:54559: assignment to entry in nil map
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc000072460}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc000072460}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc000072460}, 0xc00006e400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00001f260}, {0xcad048, 0xc000072460}, 0xc00006e400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00007f400, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54560: assignment to entry in nil map
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0002a4540}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0002a4540}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0002a4540}, 0xc00028ac00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c1230}, {0xcad048, 0xc0002a4540}, 0xc00028ac00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00007fea0, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54567: assignment to entry in nil map
+goroutine 82 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0002a4700}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x4, {0xcad048, 0xc0002a4700}, 0x19178e90eb8)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0002a4700}, 0xc00028a900)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002883c0}, {0xcad048, 0xc0002a4700}, 0xc00028a900)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000278140, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54568: assignment to entry in nil map
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0002a48c0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0002a48c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0002a48c0}, 0xc00028aa00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288480}, {0xcad048, 0xc0002a48c0}, 0xc00028aa00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002be0a0, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54569: assignment to entry in nil map
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0002a4a80}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0002a4a80}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0002a4a80}, 0xc000277300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026a780}, {0xcad048, 0xc0002a4a80}, 0xc000277300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002be140, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54570: assignment to entry in nil map
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0002a4c40}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0002a4c40}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0002a4c40}, 0xc000277400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026a810}, {0xcad048, 0xc0002a4c40}, 0xc000277400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002be1e0, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54571: assignment to entry in nil map
+goroutine 85 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc0006259b0, 0x4, 0xc0006258e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc00018e0e0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x4, {0xcad048, 0xc00018e0e0}, 0x19178e917d8)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc00018e0e0}, 0xc00028ad00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288600}, {0xcad048, 0xc00018e0e0}, 0xc00028ad00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002781e0, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:49:54 failed inserting in videos.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 failed inserting in images.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:49:54 failed inserting in audios.
+2022/02/14 14:49:54 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 failed inserting in documents.
+2022/02/14 14:49:54 http: panic serving 127.0.0.1:54575: assignment to entry in nil map
+goroutine 117 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xbe6840, 0xca3c30})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryStatistics({}, {0xc00008d9b0, 0x4, 0xc00008d8e0})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:222 +0x1a5
+cloudMirror/controllers/controllers_default.ControllerStatistics.Statistics({}, {0xcad048, 0xc0001201c0}, 0x0)
+	E:/var/go/CloudMirror/controllers/controllers_default/statistics.go:22 +0x305
+net/http.HandlerFunc.ServeHTTP(0x0, {0xcad048, 0xc0001201c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0, {0xcad048, 0xc0001201c0}, 0xc00028a000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003ee090}, {0xcad048, 0xc0001201c0}, 0xc00028a000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000094000, {0xcae900, 0xc0000c10e0})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 14:54:53 CMLog is working!
+2022/02/14 14:54:53 the CM server was start!
+2022/02/14 14:54:58 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 14:54:58 failed inserting in videos.
+2022/02/14 14:54:58 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 failed inserting in images.
+2022/02/14 14:54:58 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 14:54:58 failed inserting in audios.
+2022/02/14 14:54:58 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 14:54:58 failed inserting in documents.
+2022/02/14 14:54:58 failed inserting in documents.
+2022/02/14 14:54:58 failed inserting in documents.
+2022/02/14 15:05:28 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:05:28 failed inserting in videos.
+2022/02/14 15:05:28 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 failed inserting in images.
+2022/02/14 15:05:28 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:05:28 failed inserting in audios.
+2022/02/14 15:05:28 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:05:28 failed inserting in documents.
+2022/02/14 15:05:28 failed inserting in documents.
+2022/02/14 15:05:28 failed inserting in documents.
+2022/02/14 15:05:47 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:05:47 failed inserting in videos.
+2022/02/14 15:05:47 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 failed inserting in images.
+2022/02/14 15:05:47 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:05:47 failed inserting in audios.
+2022/02/14 15:05:47 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:05:47 failed inserting in documents.
+2022/02/14 15:05:47 failed inserting in documents.
+2022/02/14 15:05:47 failed inserting in documents.
+2022/02/14 15:25:24 CMLog is working!
+2022/02/14 15:25:24 the CM server was start!
+2022/02/14 15:25:30 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:25:30 failed inserting in videos.
+2022/02/14 15:25:30 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 failed inserting in images.
+2022/02/14 15:25:30 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:25:30 failed inserting in audios.
+2022/02/14 15:25:30 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:25:30 failed inserting in documents.
+2022/02/14 15:25:30 failed inserting in documents.
+2022/02/14 15:25:30 failed inserting in documents.
+2022/02/14 15:27:48 CMLog is working!
+2022/02/14 15:27:48 the CM server was start!
+2022/02/14 15:27:48 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:27:48 failed inserting in videos.
+2022/02/14 15:27:48 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 failed inserting in images.
+2022/02/14 15:27:48 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:27:48 failed inserting in audios.
+2022/02/14 15:27:48 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:27:48 failed inserting in documents.
+2022/02/14 15:27:48 failed inserting in documents.
+2022/02/14 15:27:48 failed inserting in documents.
+2022/02/14 15:28:01 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:28:01 failed inserting in videos.
+2022/02/14 15:28:01 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 failed inserting in images.
+2022/02/14 15:28:01 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:28:01 failed inserting in audios.
+2022/02/14 15:28:01 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:28:01 failed inserting in documents.
+2022/02/14 15:28:01 failed inserting in documents.
+2022/02/14 15:28:01 failed inserting in documents.
+2022/02/14 15:34:24 CMLog is working!
+2022/02/14 15:34:24 the CM server was start!
+2022/02/14 15:34:26 http: panic serving 127.0.0.1:54205: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000c57e8, {0xe6ea50, 0xc000012040}, {0xc0000a8180, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0000a8180, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0111, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000ac460}, 0xc0000a010c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000ac460}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a010c, {0xe6d248, 0xc0000ac460}, 0xc000220600)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000088030}, {0xe6d248, 0xc0000ac460}, 0xc000220600)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:26 http: panic serving 127.0.0.1:54206: runtime error: invalid memory address or nil pointer dereference
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000637e8, {0xe6ea50, 0xc000012040}, {0xc0000a81e0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0000a81e0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0131, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000ac620}, 0xc0000a012c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000ac620}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a012c, {0xe6d248, 0xc0000ac620}, 0xc000092300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182030}, {0xe6d248, 0xc0000ac620}, 0xc000092300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068b40, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:27 http: panic serving 127.0.0.1:54209: runtime error: invalid memory address or nil pointer dereference
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000b77e8, {0xe6ea50, 0xc000012040}, {0xc0000a82a0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0000a82a0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0151, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000ac7e0}, 0xc0000a014c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000ac7e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a014c, {0xe6d248, 0xc0000ac7e0}, 0xc000144400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001052f0}, {0xe6d248, 0xc0000ac7e0}, 0xc000144400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000ea000, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:27 http: panic serving 127.0.0.1:54212: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000b77e8, {0xe6ea50, 0xc000012040}, {0xc00001b800, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001b800, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000153d1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0001542a0}, 0xc0000153cc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0001542a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000153cc, {0xe6d248, 0xc0001542a0}, 0xc000220700)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00036d9b0}, {0xe6d248, 0xc0001542a0}, 0xc000220700)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000ea0a0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:27 http: panic serving 127.0.0.1:54213: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000f77e8, {0xe6ea50, 0xc000012040}, {0xc0000a8360, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0000a8360, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a01b1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000ac9a0}, 0xc0000a01ac)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000ac9a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a01ac, {0xe6d248, 0xc0000ac9a0}, 0xc000220800)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00036da10}, {0xe6d248, 0xc0000ac9a0}, 0xc000220800)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:28 http: panic serving 127.0.0.1:54216: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000b57e8, {0xe6ea50, 0xc000012040}, {0xc00001b8c0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001b8c0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000015431, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000154460}, 0xc00001542c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000154460}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001542c, {0xe6d248, 0xc000154460}, 0xc000092500)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000088990}, {0xe6d248, 0xc000154460}, 0xc000092500)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003980a0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54217: runtime error: invalid memory address or nil pointer dereference
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000c17e8, {0xe6ea50, 0xc000012040}, {0xc00033ff80, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00033ff80, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc00037bbd1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000205180}, 0xc00037bbcc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000205180}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00037bbcc, {0xe6d248, 0xc000205180}, 0xc000145b00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000889f0}, {0xe6d248, 0xc000205180}, 0xc000145b00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54231: runtime error: invalid memory address or nil pointer dereference
+goroutine 84 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0001717e8, {0xe6ea50, 0xc000012040}, {0xc0000a8420, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0000a8420, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a03d1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000ad340}, 0xc0000a03cc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000ad340}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a03cc, {0xe6d248, 0xc0000ad340}, 0xc0003ae800)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a64e0}, {0xe6d248, 0xc0000ad340}, 0xc0003ae800)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398280, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54232: runtime error: invalid memory address or nil pointer dereference
+goroutine 85 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00016d7e8, {0xe6ea50, 0xc000012040}, {0xc0003e6060, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0003e6060, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc00037bbf1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000205340}, 0xc00037bbec)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000205340}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00037bbec, {0xe6d248, 0xc000205340}, 0xc0003ae900)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a65a0}, {0xe6d248, 0xc000205340}, 0xc0003ae900)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398320, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54233: runtime error: invalid memory address or nil pointer dereference
+goroutine 86 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000fd7e8, {0xe6ea50, 0xc000012040}, {0xc00001b9e0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001b9e0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000015771, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000154fc0}, 0xc00001576c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000154fc0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001576c, {0xe6d248, 0xc000154fc0}, 0xc0003aea00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a6660}, {0xe6d248, 0xc000154fc0}, 0xc0003aea00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003983c0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54234: runtime error: invalid memory address or nil pointer dereference
+goroutine 87 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000b97e8, {0xe6ea50, 0xc000012040}, {0xc00001a180, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001a180, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0011, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0001541c0}, 0xc0000a000c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x4, {0xe6d248, 0xc0001541c0}, 0x216846c0a28)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a000c, {0xe6d248, 0xc0001541c0}, 0xc000145a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105dd0}, {0xe6d248, 0xc0001541c0}, 0xc000145a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000398460, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54235: runtime error: invalid memory address or nil pointer dereference
+goroutine 60 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000b37e8, {0xe6ea50, 0xc000012040}, {0xc00001a240, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001a240, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0031, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000154380}, 0xc0000a002c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000154380}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a002c, {0xe6d248, 0xc000154380}, 0xc0003aeb00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a6930}, {0xe6d248, 0xc000154380}, 0xc0003aeb00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068e60, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54239: runtime error: invalid memory address or nil pointer dereference
+goroutine 64 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004a37e8, {0xe6ea50, 0xc000012040}, {0xc00001a300, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00001a300, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0000a0051, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc000154540}, 0xc0000a004c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc000154540}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000a004c, {0xe6d248, 0xc000154540}, 0xc000092000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182030}, {0xe6d248, 0xc000154540}, 0xc000092000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068000, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:44 http: panic serving 127.0.0.1:54240: runtime error: invalid memory address or nil pointer dereference
+goroutine 114 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000557e8, {0xe6ea50, 0xc000012040}, {0xc00008c060, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00008c060, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc00037a051, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0000660e0}, 0xc00037a04c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0000660e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00037a04c, {0xe6d248, 0xc0000660e0}, 0xc000144100)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000088330}, {0xe6d248, 0xc0000660e0}, 0xc000144100)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003980a0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:34:45 http: panic serving 127.0.0.1:54243: runtime error: invalid memory address or nil pointer dereference
+goroutine 101 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004a37e8, {0xe6ea50, 0xc000012040}, {0xc00010a060, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a060, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000328011, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fc0e0}, 0xc00032800c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fc0e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00032800c, {0xe6d248, 0xc0003fc0e0}, 0xc0003ae000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a6150}, {0xe6d248, 0xc0003fc0e0}, 0xc0003ae000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001e4000, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54244: runtime error: invalid memory address or nil pointer dereference
+goroutine 94 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0001bf7e8, {0xe6ea50, 0xc000012040}, {0xc00010a0c0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a0c0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000328231, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fc7e0}, 0xc00032822c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fc7e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00032822c, {0xe6d248, 0xc0003fc7e0}, 0xc000550200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000883f0}, {0xe6d248, 0xc0003fc7e0}, 0xc000550200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000136000, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54260: runtime error: invalid memory address or nil pointer dereference
+goroutine 178 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00014b7e8, {0xe6ea50, 0xc000012040}, {0xc00010a180, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a180, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000328251, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fc9a0}, 0xc00032824c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fc9a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00032824c, {0xe6d248, 0xc0003fc9a0}, 0xc000093f00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182930}, {0xe6d248, 0xc0003fc9a0}, 0xc000093f00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068a00, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54261: runtime error: invalid memory address or nil pointer dereference
+goroutine 179 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000577e8, {0xe6ea50, 0xc000012040}, {0xc00010a240, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a240, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000328271, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fcb60}, 0xc00032826c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fcb60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00032826c, {0xe6d248, 0xc0003fcb60}, 0xc000550000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182990}, {0xe6d248, 0xc0003fcb60}, 0xc000550000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54263: runtime error: invalid memory address or nil pointer dereference
+goroutine 180 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00005b7e8, {0xe6ea50, 0xc000012040}, {0xc0004c0180, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0004c0180, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000014611, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0004b4fc0}, 0xc00001460c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0004b4fc0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001460c, {0xe6d248, 0xc0004b4fc0}, 0xc000550100)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001829f0}, {0xe6d248, 0xc0004b4fc0}, 0xc000550100)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068b40, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54264: runtime error: invalid memory address or nil pointer dereference
+goroutine 164 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004a97e8, {0xe6ea50, 0xc000012040}, {0xc0004c0240, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0004c0240, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000014631, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0004b5180}, 0xc00001462c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0004b5180}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001462c, {0xe6d248, 0xc0004b5180}, 0xc0004e6200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105d70}, {0xe6d248, 0xc0004b5180}, 0xc0004e6200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001360a0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:02 http: panic serving 127.0.0.1:54265: runtime error: invalid memory address or nil pointer dereference
+goroutine 160 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00014f7e8, {0xe6ea50, 0xc000012040}, {0xc00010a300, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a300, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000328291, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fcd20}, 0xc00032828c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fcd20}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00032828c, {0xe6d248, 0xc0003fcd20}, 0xc0004e6300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105f50}, {0xe6d248, 0xc0003fcd20}, 0xc0004e6300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0005400a0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:03 http: panic serving 127.0.0.1:54272: runtime error: invalid memory address or nil pointer dereference
+goroutine 161 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004ef7e8, {0xe6ea50, 0xc000012040}, {0xc0005620c0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0005620c0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000354411, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc00052ee00}, 0xc00035440c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc00052ee00}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00035440c, {0xe6d248, 0xc00052ee00}, 0xc000550300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182cf0}, {0xe6d248, 0xc00052ee00}, 0xc000550300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000540140, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:03 http: panic serving 127.0.0.1:54273: runtime error: invalid memory address or nil pointer dereference
+goroutine 183 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004a97e8, {0xe6ea50, 0xc000012040}, {0xc00010a3c0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc00010a3c0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc0003282b1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0003fcee0}, 0xc0003282ac)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0003fcee0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003282ac, {0xe6d248, 0xc0003fcee0}, 0xc000550400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182e10}, {0xe6d248, 0xc0003fcee0}, 0xc000550400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:03 http: panic serving 127.0.0.1:54276: runtime error: invalid memory address or nil pointer dereference
+goroutine 195 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xda6780, 0xd5ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xe6ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0004ef7e8, {0xe6ea50, 0xc000012040}, {0xc0004c0300, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xdf05ce, {0xe6ea50, 0xc000012040}, {0xc0004c0300, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xdf0fc1, 0x6}, {0xc000014691, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xe6d248, 0xc0004b5340}, 0xc00001468c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xe6d248, 0xc0004b5340}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001468c, {0xe6d248, 0xc0004b5340}, 0xc000178f00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206990}, {0xe6d248, 0xc0004b5340}, 0xc000178f00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0005401e0, {0xe6eac0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 15:35:08 CMLog is working!
+2022/02/14 15:35:08 the CM server was start!
+2022/02/14 15:35:09 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:35:09 failed inserting in videos.
+2022/02/14 15:35:09 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 failed inserting in images.
+2022/02/14 15:35:09 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:35:09 failed inserting in audios.
+2022/02/14 15:35:09 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:35:09 failed inserting in documents.
+2022/02/14 15:35:09 failed inserting in documents.
+2022/02/14 15:35:09 failed inserting in documents.
+2022/02/14 15:35:17 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 15:35:17 failed inserting in videos.
+2022/02/14 15:35:17 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 failed inserting in images.
+2022/02/14 15:35:17 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 15:35:17 failed inserting in audios.
+2022/02/14 15:35:17 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 15:35:17 failed inserting in documents.
+2022/02/14 15:35:17 failed inserting in documents.
+2022/02/14 15:35:17 failed inserting in documents.
+2022/02/14 16:54:55 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 16:54:55 failed inserting in videos.
+2022/02/14 16:54:55 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 failed inserting in images.
+2022/02/14 16:54:55 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 16:54:55 failed inserting in audios.
+2022/02/14 16:54:55 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 16:54:55 failed inserting in documents.
+2022/02/14 16:54:55 failed inserting in documents.
+2022/02/14 16:54:55 failed inserting in documents.
+2022/02/14 16:58:02 CMLog is working!
+2022/02/14 16:58:02 the CM server was start!
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64644: runtime error: invalid memory address or nil pointer dereference
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000637e8, {0xb2ea50, 0xc000012040}, {0xc00001b8c0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc00001b8c0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc0000153f1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc0000d4620}, 0xc0000153ec)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc0000d4620}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000153ec, {0xb2d248, 0xc0000d4620}, 0xc0003a9b00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00010c240}, {0xb2d248, 0xc0000d4620}, 0xc0003a9b00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000122000, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64645: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0000677e8, {0xb2ea50, 0xc000012040}, {0xc0003e0060, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc0003e0060, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc0003b23b1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc00039ab60}, 0xc0003b23ac)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc00039ab60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003b23ac, {0xb2d248, 0xc00039ab60}, 0xc0003a9300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000184090}, {0xb2d248, 0xc00039ab60}, 0xc0003a9300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000188000, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64649: runtime error: invalid memory address or nil pointer dereference
+goroutine 61 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00018f7e8, {0xb2ea50, 0xc000012040}, {0xc0003e0120, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc0003e0120, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc0003b23d1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc00039ad20}, 0xc0003b23cc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc00039ad20}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003b23cc, {0xb2d248, 0xc00039ad20}, 0xc000135b00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00032e240}, {0xb2d248, 0xc00039ad20}, 0xc000135b00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000386140, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64650: runtime error: invalid memory address or nil pointer dereference
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0001917e8, {0xb2ea50, 0xc000012040}, {0xc0003e01e0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc0003e01e0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc0003b23f1, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc00039aee0}, 0xc0003b23ec)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc00039aee0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003b23ec, {0xb2d248, 0xc00039aee0}, 0xc0003a9a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000388750}, {0xb2d248, 0xc00039aee0}, 0xc0003a9a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000122140, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64651: runtime error: invalid memory address or nil pointer dereference
+goroutine 62 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0003a37e8, {0xb2ea50, 0xc000012040}, {0xc00001b980, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc00001b980, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc000015411, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc0000d47e0}, 0xc00001540c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc0000d47e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001540c, {0xb2d248, 0xc0000d47e0}, 0xc000135c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00032e300}, {0xb2d248, 0xc0000d47e0}, 0xc000135c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003861e0, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64652: runtime error: invalid memory address or nil pointer dereference
+goroutine 65 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0003a57e8, {0xb2ea50, 0xc000012040}, {0xc00001ba40, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc00001ba40, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc000015431, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc0000d49a0}, 0xc00001542c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc0000d49a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001542c, {0xb2d248, 0xc0000d49a0}, 0xc0000c4b00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000854a0}, {0xb2d248, 0xc0000d49a0}, 0xc0000c4b00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000386280, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:06 http: panic serving 127.0.0.1:64658: runtime error: invalid memory address or nil pointer dereference
+goroutine 82 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0003a57e8, {0xb2ea50, 0xc000012040}, {0xc00001bb00, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc00001bb00, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc000015491, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc0000d4b60}, 0xc00001548c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x4, {0xb2d248, 0xc0000d4b60}, 0x2cbe0040108)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001548c, {0xb2d248, 0xc0000d4b60}, 0xc0003a9c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000388cc0}, {0xb2d248, 0xc0000d4b60}, 0xc0003a9c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:08 http: panic serving 127.0.0.1:64659: runtime error: invalid memory address or nil pointer dereference
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc00005b7e8, {0xb2ea50, 0xc000012040}, {0xc0002d5ec0, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc0002d5ec0, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc00031fb11, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc0001469a0}, 0xc00031fb0c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc0001469a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00031fb0c, {0xb2d248, 0xc0001469a0}, 0xc0000c4d00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000858c0}, {0xb2d248, 0xc0001469a0}, 0xc0000c4d00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001221e0, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:08 http: panic serving 127.0.0.1:64667: runtime error: invalid memory address or nil pointer dereference
+goroutine 84 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xa66780, 0xa1ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xb2ea50, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xc0003a57e8, {0xb2ea50, 0xc000012040}, {0xc0002d5f80, 0x5f}, 0xc1)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xab05ce, {0xb2ea50, 0xc000012040}, {0xc0002d5f80, 0x5f})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xab0fc1, 0x6}, {0xc00031fb31, 0x1})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:237 +0x11a
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xb2d248, 0xc000146b60}, 0xc00031fb2c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:14 +0x85
+net/http.HandlerFunc.ServeHTTP(0x0, {0xb2d248, 0xc000146b60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00031fb2c, {0xb2d248, 0xc000146b60}, 0xc0000c4e00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000085980}, {0xb2d248, 0xc000146b60}, 0xc0000c4e00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0xb2eac0, 0xc00010c150})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/14 16:58:10 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 16:58:10 failed inserting in videos.
+2022/02/14 16:58:10 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 failed inserting in images.
+2022/02/14 16:58:10 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 16:58:10 failed inserting in audios.
+2022/02/14 16:58:10 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 16:58:10 failed inserting in documents.
+2022/02/14 16:58:10 failed inserting in documents.
+2022/02/14 16:58:10 failed inserting in documents.

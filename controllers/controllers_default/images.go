@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-type ControllerDocuments struct{}
+type ControllerImages struct{}
 
-func (c ControllerDocuments) Documents(w http.ResponseWriter, r *http.Request) {
+func (c ControllerImages) Images(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
 	page := q.Get("page") //get page number.
-	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryOf("documents", page)
+	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryOf("images", page)
 	res2, _ := json.Marshal(res1)
 	w.WriteHeader(200)
 	w.Write(res2)

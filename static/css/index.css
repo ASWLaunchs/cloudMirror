@@ -102,7 +102,7 @@ nav {
     border-left: 4px solid rgb(95, 187, 130);
 }
 
-.previewContent{
+.previewContent {
     max-height: 90vh;
     overflow-y: scroll;
 }
@@ -129,6 +129,31 @@ nav {
     display: block;
     padding: 4px 12px 4px;
     overflow-x: scroll;
+}
+
+#fileDetail .container {
+    padding: 4px 8px;
+}
+
+#fileDetail .container .title {
+    text-align: center;
+}
+
+#fileDetail .fileInfo {
+    padding: 4px 8px;
+}
+
+#result-stats {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Google Sans, arial, sans-serif;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 8px;
+    color: #70757a;
+    font-size: 14px;
+    line-height: 43px;
 }
 
 footer {

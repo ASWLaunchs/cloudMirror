@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strconv"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -15,6 +16,7 @@ var DBSQLite *sql.DB
 var stmt *sql.Stmt
 var err error
 var sqlStmt string
+var pagination map[string]int
 
 //SQLiteInit() initialization data
 func DBSQLiteInit() {
@@ -204,6 +206,8 @@ func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag str
 //DBSQLiteQueryStatistics()
 func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistics {
 	var result = make([]Statistics, 0)
+	pagination = make(map[string]int)
+
 	for _, v := range category {
 		sqlStmt = `SELECT count(*) FROM ` + v
 		//prepare sql string.
@@ -216,15 +220,19 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 		for rows.Next() {
 			rows.Scan(&count)
 			result = append(result, Statistics{v, count})
+			pagination[v] = count
 		}
 	}
 	return result
 }
 
 //DBSQLiteQueryOf() -> default query all .
-func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string) []Resource {
+//return resource info and page number count.
+func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string) []Resource {
 	var result = make([]Resource, 0)
-	sqlStmt = `SELECT fid , tag, filename, pathname,created_time, filesize FROM ` + category + ` ORDER BY fid limit 10`
+	pageNum, _ := strconv.Atoi(page) //convert string to int , and make pageNum multiplied 10.
+	page = strconv.Itoa(pageNum * 10)
+	sqlStmt = `SELECT fid , tag, filename, pathname,created_time, filesize FROM ` + category + ` ORDER BY fid limit ` + page + `,10`
 	//prepare sql string.
 	stmt, err := DBSQLite.Prepare(sqlStmt)
 	checkErr(err)
@@ -237,11 +245,10 @@ func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string) []Resource {
 		rows.Scan(&fid, &tag, &filename, &pathname, &createdTime, &filesize)
 		result = append(result, Resource{fid, tag, filename, pathname, createdTime, filesize})
 	}
-	// var fid, filename, pathname string
-	// var filesize int
-	// for rows.Next() {
-	// 	rows.Scan(&fid, &filename, &pathname, &filesize)
-	// 	result = append(result, Resource{fid, "", filename, pathname, 0, filesize})
-	// }
 	return result
+}
+
+//DBSQLiteQueryPageCount()
+func (c ModelsCoreSQLite) DBSQLiteQueryPageCount(category string) int {
+	return pagination[category]
 }

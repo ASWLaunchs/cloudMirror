@@ -7,9 +7,9 @@ import (
 	"text/template"
 )
 
-type ControllerVideo struct{}
+type ControllerVideos struct{}
 
-func (c ControllerVideo) Video(w http.ResponseWriter, r *http.Request) {
+func (c ControllerVideos) Videos(w http.ResponseWriter, r *http.Request) {
 	ffmpegPath := "E:/env/pkg/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe"
 	srcPath := "static/assets/videos/example.mp4"
 	targetPath := "static/assets/hls"

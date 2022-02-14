@@ -1,4 +1,4 @@
-const Documents = {
+const documents = {
     func: {
         query: function () {
             $.get("/documents").done(function (data) {
@@ -17,7 +17,7 @@ const Documents = {
                         </div>
                         <div class="item-tail">
                             <button type="button" class="btn btn-link btn-sm" data-toggle="modal"
-                                data-target=".bd-CloudMirror-modal-lg" onclick="Documents.func.preview('${v.fid}','${v.tag}','${v.filename}','${v.pathname}','${v.created_time}',${v.filesize})">预览</button>
+                                data-target=".bd-CloudMirror-modal-lg" onclick="documents.func.preview('${v.fid}','${v.tag}','${v.filename}','${v.pathname}','${v.created_time}',${v.filesize})">预览</button>
                             <button type="button" class="btn btn-link btn-sm">下载</button>
                         </div>
                     </div>`
