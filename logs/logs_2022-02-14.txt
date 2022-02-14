@@ -5735,3 +5735,23 @@ created by net/http.(*Server).Serve
 2022/02/14 16:58:10 failed inserting in documents.
 2022/02/14 16:58:10 failed inserting in documents.
 2022/02/14 16:58:10 failed inserting in documents.
+2022/02/14 17:01:07 CMLog is working!
+2022/02/14 17:01:07 the CM server was start!
+2022/02/14 17:01:16 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/14 17:01:16 failed inserting in videos.
+2022/02/14 17:01:16 The total number of files in the current directory(static/assets/images) is: 9.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 failed inserting in images.
+2022/02/14 17:01:16 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/14 17:01:16 failed inserting in audios.
+2022/02/14 17:01:16 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/14 17:01:16 failed inserting in documents.
+2022/02/14 17:01:16 failed inserting in documents.
+2022/02/14 17:01:16 failed inserting in documents.

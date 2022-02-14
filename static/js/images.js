@@ -76,7 +76,7 @@ const Images = {
                     <br>
                     创建时间: ${createdTime}
                     <br>
-                    文件大小: ${filesize}
+                    文件大小: ${filesize}B
                 </div>`
                 $("#fileDetail").html(fileDetail)
             })
