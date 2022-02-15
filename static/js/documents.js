@@ -2,7 +2,6 @@ const Documents = {
     func: {
         query: function () {
             $.get("/documents").done(function (data) {
-                console.log(data)
                 var data = JSON.parse(data)
                 let document = ''
                 data.forEach(v => {

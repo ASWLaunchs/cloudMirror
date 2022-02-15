@@ -30,10 +30,12 @@
                     <a class="nav-link" href="#">全部</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="Documents.func.query(0)">文档</a>
+                    <a class="nav-link" href="javascript:void(0)"
+                        onclick="Documents.func.query(1,CM.func.getQueryVariable('keyWord'))">文档</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="Images.func.query(0)">图片</a>
+                    <a class="nav-link" href="javascript:void(0)"
+                        onclick="Images.func.query(1,CM.func.getQueryVariable('keyWord'))">图片</a>
                 </li>
                 <li class="nav-item">
                 <li class="nav-item">
@@ -180,6 +182,8 @@
             </div>
         </div>
     </div>
+    <!-- index searching page -->
+    <div></div>
     <!-- Modal框 -->
     <div class="modal fade bd-CloudMirror-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">

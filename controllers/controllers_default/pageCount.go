@@ -11,7 +11,8 @@ type ControllerPageCount struct{}
 func (c ControllerPageCount) PageCount(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
 	category := q.Get("category") //get page number.
-	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryPageCount(category)
+	keyWord := q.Get("keyWord")
+	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryPageCount(category, keyWord)
 	res2, _ := json.Marshal(res1)
 	w.WriteHeader(200)
 	w.Write(res2)

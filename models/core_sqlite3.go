@@ -206,7 +206,6 @@ func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag str
 //DBSQLiteQueryStatistics()
 func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistics {
 	var result = make([]Statistics, 0)
-	pagination = make(map[string]int)
 
 	for _, v := range category {
 		sqlStmt = `SELECT count(*) FROM ` + v
@@ -220,7 +219,6 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 		for rows.Next() {
 			rows.Scan(&count)
 			result = append(result, Statistics{v, count})
-			pagination[v] = count
 		}
 	}
 	return result
@@ -228,12 +226,13 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 
 //DBSQLiteQueryOf() -> default query all .
 //return resource info and page number count.
-func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string) []Resource {
+func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string, keyWord string) []Resource {
 	var result = make([]Resource, 0)
 	pageNum, _ := strconv.Atoi(page) //convert string to int , and make pageNum multiplied 10.
-	page = strconv.Itoa(pageNum * 10)
-	sqlStmt = `SELECT fid , tag, filename, pathname,created_time, filesize FROM ` + category + ` ORDER BY fid limit ` + page + `,10`
+	page = strconv.Itoa((pageNum - 1) * 10)
+	sqlStmt = `SELECT fid, tag, filename, pathname,created_time, filesize FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid limit ` + page + `,10`
 	//prepare sql string.
+
 	stmt, err := DBSQLite.Prepare(sqlStmt)
 	checkErr(err)
 	rows, err := stmt.Query()
@@ -245,10 +244,16 @@ func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string) []Resour
 		rows.Scan(&fid, &tag, &filename, &pathname, &createdTime, &filesize)
 		result = append(result, Resource{fid, tag, filename, pathname, createdTime, filesize})
 	}
+
 	return result
 }
 
 //DBSQLiteQueryPageCount()
-func (c ModelsCoreSQLite) DBSQLiteQueryPageCount(category string) int {
+func (c ModelsCoreSQLite) DBSQLiteQueryPageCount(category string, keyWord string) int {
+	pagination = make(map[string]int)
+	var count int
+	err := DBSQLite.QueryRow(`SELECT count(*) FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid`).Scan(&count)
+	checkErr(err)
+	pagination[category] = count
 	return pagination[category]
 }
