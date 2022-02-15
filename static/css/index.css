@@ -16,7 +16,7 @@ body {
 
 nav {
     z-index: 999;
-    box-shadow: 1px 1px 12px 1px rgb(129, 126, 77);
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
 
 #title {
@@ -155,6 +155,67 @@ nav {
     font-size: 14px;
     line-height: 43px;
 }
+
+#searchingPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    color: #202124;
+    text-align: center;
+    background-color: #fff;
+    background-size: cover;
+    /* background-image: url('/static/assets/images/wallhaven-ne16m8.jpg'); */
+    z-index: 999;
+}
+
+#searchingPage .logo {
+    margin-top: 20vh;
+}
+
+#searchingPage .searchingBar {
+    display: flex;
+    align-items: stretch;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 0 12px;
+    height: 40px;
+    border-radius: 18px;
+    border: 1px solid #dfe1e5;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#searchingPage .searchingBar:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+#searchingPage .searchingBar li {
+    list-style: none;
+    height: 38px;
+    line-height: 38px;
+}
+
+#searchingPage .searchingBar input {
+    flex: 2;
+    outline: #fff;
+    border: 0px solid rgb(255, 255, 255);
+}
+
+#searchingPage .searchingBar .searchButton {
+    flex: 1;
+    width: 40px;
+    height: 38px;
+    line-height: 38px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    background-image: url('/static/assets/images/search.svg');
+    cursor: pointer;
+}
+
 
 footer {
     display: block;

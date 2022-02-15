@@ -2354,3 +2354,995 @@ created by net/http.(*Server).Serve
 2022/02/15 18:44:31 failed inserting in documents.
 2022/02/15 18:44:31 failed inserting in documents.
 2022/02/15 18:44:31 failed inserting in documents.
+2022/02/15 20:10:05 CMLog is working!
+2022/02/15 20:10:05 the CM server was start!
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65139: runtime error: invalid memory address or nil pointer dereference
+goroutine 1580 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0xeceb30, 0xc000012040}, {0xc00019e370, 0x45}, {0x0, 0x0, 0x0}, 0x70)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x23ad5c91348, {0xeceb30, 0xc000012040}, {0xc00019e370, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0xe53b8e, {0xc00019e370, 0x9f36ba}, {0x0, 0x0, 0xc00035c6d8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00035c6d8, 0x6}, {0xc00035c6e7, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0xecd2e8, 0xc0001989a0}, 0xc00035c6cf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0001989a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00035c6cf, {0xecd2e8, 0xc0001989a0}, 0xc00017ae00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c270}, {0xecd2e8, 0xc0001989a0}, 0xc00017ae00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068a00, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65142: runtime error: invalid memory address or nil pointer dereference
+goroutine 1584 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xa2e67c, {0xeceb30, 0xc000012040}, {0xc0001d0a00, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00036b451, {0xeceb30, 0xc000012040}, {0xc0001d0a00, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xe50fc1, 0x6}, {0xc00036b451, 0x1}, {0xc00036b45b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xecd2e8, 0xc0001cf340}, 0xc00036b44c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0001cf340}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00036b44c, {0xecd2e8, 0xc0001cf340}, 0xc00017ad00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c630}, {0xecd2e8, 0xc0001cf340}, 0xc00017ad00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068aa0, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65147: runtime error: invalid memory address or nil pointer dereference
+goroutine 1656 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x10e8480, {0xeceb30, 0xc000012040}, {0xc000522080, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00006c011, {0xeceb30, 0xc000012040}, {0xc000522080, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xe50fc1, 0x6}, {0xc00006c011, 0x1}, {0xc00006c01b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xecd2e8, 0xc0005020e0}, 0xc00006c00c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0005020e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00006c00c, {0xecd2e8, 0xc0005020e0}, 0xc00027cd00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000152540}, {0xecd2e8, 0xc0005020e0}, 0xc00027cd00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002b21e0, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65138: runtime error: invalid memory address or nil pointer dereference
+goroutine 1579 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0xeceb30, 0xc000012040}, {0xc000362320, 0x45}, {0x0, 0x0, 0x0}, 0x20)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x23ad5c90108, {0xeceb30, 0xc000012040}, {0xc000362320, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0xe53b8e, {0xc000362320, 0x9f36ba}, {0x0, 0x0, 0xc000383498})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc000383498, 0x6}, {0xc0003834a7, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0xecd2e8, 0xc0001cf500}, 0xc00038348f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0001cf500}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00038348f, {0xecd2e8, 0xc0001cf500}, 0xc00030b000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c180}, {0xecd2e8, 0xc0001cf500}, 0xc00030b000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068000, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65164: runtime error: invalid memory address or nil pointer dereference
+goroutine 1185 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0xeceb30, 0xc000012040}, {0xc00019e3c0, 0x45}, {0x0, 0x0, 0x0}, 0xc0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x23ad5c91348, {0xeceb30, 0xc000012040}, {0xc00019e3c0, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0xe53b8e, {0xc00019e3c0, 0x9f36ba}, {0x0, 0x0, 0xc00035c798})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00035c798, 0x6}, {0xc00035c7a7, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0xecd2e8, 0xc000198b60}, 0xc00035c78f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc000198b60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00035c78f, {0xecd2e8, 0xc000198b60}, 0xc00030bd00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003ff260}, {0xecd2e8, 0xc000198b60}, 0xc00030bd00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001f40a0, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65165: runtime error: invalid memory address or nil pointer dereference
+goroutine 1633 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xa2e67c, {0xeceb30, 0xc000012040}, {0xc0001d0c00, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00036b541, {0xeceb30, 0xc000012040}, {0xc0001d0c00, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xe50fc1, 0x6}, {0xc00036b541, 0x1}, {0xc00036b54b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xecd2e8, 0xc0001cf6c0}, 0xc00036b53c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0001cf6c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00036b53c, {0xecd2e8, 0xc0001cf6c0}, 0xc00027d300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000152d80}, {0xecd2e8, 0xc0001cf6c0}, 0xc00027d300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65168: runtime error: invalid memory address or nil pointer dereference
+goroutine 1701 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0xeceb30, 0xc000012040}, {0xc00019e410, 0x45}, {0x0, 0x0, 0x0}, 0x10)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x23ad5c91348, {0xeceb30, 0xc000012040}, {0xc00019e410, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0xe53b8e, {0xc00019e410, 0x9f36ba}, {0x0, 0x0, 0xc00035c858})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00035c858, 0x6}, {0xc00035c867, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0xecd2e8, 0xc000198d20}, 0xc00035c84f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc000198d20}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00035c84f, {0xecd2e8, 0xc000198d20}, 0xc00022c600)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000384060}, {0xecd2e8, 0xc000198d20}, 0xc00022c600)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:47:41 http: panic serving 127.0.0.1:65169: runtime error: invalid memory address or nil pointer dereference
+goroutine 1686 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0xe06780, 0xdbef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0xeceb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xa2e67c, {0xeceb30, 0xc000012040}, {0xc000112c80, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc0003a7811, {0xeceb30, 0xc000012040}, {0xc000112c80, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0xe50fc1, 0x6}, {0xc0003a7811, 0x1}, {0xc0003a781b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0xecd2e8, 0xc0001555e0}, 0xc0003a780c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0xecd2e8, 0xc0001555e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003a780c, {0xecd2e8, 0xc0001555e0}, 0xc00027d400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000153050}, {0xecd2e8, 0xc0001555e0}, 0xc00027d400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001f4140, {0xeceba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 22:50:05 CMLog is working!
+2022/02/15 22:50:05 the CM server was start!
+2022/02/15 23:03:54 http: panic serving 127.0.0.1:51462: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc00043c000, 0x46}, {0x0, 0x0, 0x0}, 0x0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0598, {0x55eb30, 0xc000012040}, {0xc00043c000, 0x46}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc00043c000, 0x836ba}, {0x0, 0x0, 0xc00000e1d8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00000e1d8, 0x6}, {0xc00000e1e7, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0001541c0}, 0xc00000e1cf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0001541c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00000e1cf, {0x55d2e8, 0xc0001541c0}, 0xc000476100)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105260}, {0x55d2e8, 0xc0001541c0}, 0xc000476100)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00008e1e0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:03:54 http: panic serving 127.0.0.1:51463: runtime error: invalid memory address or nil pointer dereference
+goroutine 162 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0x778480, {0x55eb30, 0xc000012040}, {0xc0004d0080, 0x7c}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc000378011, {0x55eb30, 0xc000012040}, {0xc0004d0080, 0x7c})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc000378011, 0x1}, {0xc00037801b, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0004ca0e0}, 0xc00037800c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0004ca0e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00037800c, {0x55d2e8, 0xc0004ca0e0}, 0xc0003e2000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008a090}, {0x55d2e8, 0xc0004ca0e0}, 0xc0003e2000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51475: runtime error: invalid memory address or nil pointer dereference
+goroutine 171 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc00000c500, 0x46}, {0x0, 0x0, 0x0}, 0x0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0a28, {0x55eb30, 0xc000012040}, {0xc00000c500, 0x46}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc00000c500, 0x836ba}, {0x0, 0x0, 0xc00033cb58})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00033cb58, 0x6}, {0xc00033cb67, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc000510b60}, 0xc00033cb4f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc000510b60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00033cb4f, {0x55d2e8, 0xc000510b60}, 0xc0003e3e00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008a570}, {0x55d2e8, 0xc000510b60}, 0xc0003e3e00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068be0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51477: runtime error: invalid memory address or nil pointer dereference
+goroutine 175 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc000112980, 0x7c}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc0001a6c41, {0x55eb30, 0xc000012040}, {0xc000112980, 0x7c})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc0001a6c41, 0x1}, {0xc0001a6c4b, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc000154fc0}, 0xc0001a6c3c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc000154fc0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0001a6c3c, {0x55d2e8, 0xc000154fc0}, 0xc0003e3200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00040c9f0}, {0x55d2e8, 0xc000154fc0}, 0xc0003e3200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068d20, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51464: runtime error: invalid memory address or nil pointer dereference
+goroutine 85 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc0003423c0, 0x46}, {0x0, 0x0, 0x0}, 0xc0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0108, {0x55eb30, 0xc000012040}, {0xc0003423c0, 0x46}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc0003423c0, 0x836ba}, {0x0, 0x0, 0xc000364d18})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc000364d18, 0x6}, {0xc000364d27, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0004cae00}, 0xc000364d0f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0004cae00}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000364d0f, {0x55d2e8, 0xc0004cae00}, 0xc000476c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105410}, {0x55d2e8, 0xc0004cae00}, 0xc000476c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0003d2000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51476: runtime error: invalid memory address or nil pointer dereference
+goroutine 174 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc0003f8600, 0x7c}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00034a821, {0x55eb30, 0xc000012040}, {0xc0003f8600, 0x7c})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00034a821, 0x1}, {0xc00034a82b, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0003fc9a0}, 0xc00034a81c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0003fc9a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00034a81c, {0x55d2e8, 0xc0003fc9a0}, 0xc000476a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00040c900}, {0x55d2e8, 0xc0003fc9a0}, 0xc000476a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068c80, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51483: runtime error: invalid memory address or nil pointer dereference
+goroutine 214 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc0001b4190, 0x46}, {0x0, 0x0, 0x0}, 0x90)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0eb8, {0x55eb30, 0xc000012040}, {0xc0001b4190, 0x46}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc0001b4190, 0x836ba}, {0x0, 0x0, 0xc0003f65d8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc0003f65d8, 0x6}, {0xc0003f65e7, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0003fcb60}, 0xc0003f65cf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0003fcb60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0003f65cf, {0x55d2e8, 0xc0003fcb60}, 0xc000405700)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00040cf30}, {0x55d2e8, 0xc0003fcb60}, 0xc000405700)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068e60, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:04:00 http: panic serving 127.0.0.1:51484: runtime error: invalid memory address or nil pointer dereference
+goroutine 189 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc0004d0880, 0x7c}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc000378d91, {0x55eb30, 0xc000012040}, {0xc0004d0880, 0x7c})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc000378d91, 0x1}, {0xc000378d9b, 0x5})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0004cafc0}, 0xc000378d8c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0004cafc0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000378d8c, {0x55d2e8, 0xc0004cafc0}, 0xc000207300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000188930}, {0x55d2e8, 0xc0004cafc0}, 0xc000207300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc00008e3c0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53260: runtime error: invalid memory address or nil pointer dereference
+goroutine 190 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc00000c640, 0x45}, {0x0, 0x0, 0x0}, 0x40)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0a28, {0x55eb30, 0xc000012040}, {0xc00000c640, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc00000c640, 0x836ba}, {0x0, 0x0, 0xc00033d318})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00033d318, 0x6}, {0xc00033d327, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0001556c0}, 0xc00033d30f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0001556c0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00033d30f, {0x55d2e8, 0xc0001556c0}, 0xc00011ec00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000188090}, {0x55d2e8, 0xc0001556c0}, 0xc00011ec00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53261: runtime error: invalid memory address or nil pointer dereference
+goroutine 191 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc0004d0580, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00034acd1, {0x55eb30, 0xc000012040}, {0xc0004d0580, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00034acd1, 0x1}, {0xc00034acdb, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0000bc9a0}, 0xc00034accc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0000bc9a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00034accc, {0x55d2e8, 0xc0000bc9a0}, 0xc000620400)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000188180}, {0x55d2e8, 0xc0000bc9a0}, 0xc000620400)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068320, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53267: runtime error: invalid memory address or nil pointer dereference
+goroutine 266 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc000246000, 0x45}, {0x0, 0x0, 0x0}, 0x0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0eb8, {0x55eb30, 0xc000012040}, {0xc000246000, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc000246000, 0x836ba}, {0x0, 0x0, 0xc000208018})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc000208018, 0x6}, {0xc000208027, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0002140e0}, 0xc00020800f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0002140e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020800f, {0x55d2e8, 0xc0002140e0}, 0xc000207800)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001887e0}, {0x55d2e8, 0xc0002140e0}, 0xc000207800)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000b0140, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53268: runtime error: invalid memory address or nil pointer dereference
+goroutine 250 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc000112f00, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00000ba21, {0x55eb30, 0xc000012040}, {0xc000112f00, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00000ba21, 0x1}, {0xc00000ba2b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc000155880}, 0xc00000ba1c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc000155880}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00000ba1c, {0x55d2e8, 0xc000155880}, 0xc00011e800)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000105f20}, {0x55d2e8, 0xc000155880}, 0xc00011e800)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068b40, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53269: runtime error: invalid memory address or nil pointer dereference
+goroutine 267 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc0001b4000, 0x45}, {0x0, 0x0, 0x0}, 0x0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0108, {0x55eb30, 0xc000012040}, {0xc0001b4000, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc0001b4000, 0x836ba}, {0x0, 0x0, 0xc000190258})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc000190258, 0x6}, {0xc000190267, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc000198380}, 0xc00019024f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x4, {0x55d2e8, 0xc000198380}, 0x229f92f0108)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00019024f, {0x55d2e8, 0xc000198380}, 0xc00011e900)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000148030}, {0x55d2e8, 0xc000198380}, 0xc00011e900)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0000b01e0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:44 http: panic serving 127.0.0.1:53270: runtime error: invalid memory address or nil pointer dereference
+goroutine 251 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc000224100, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc000228071, {0x55eb30, 0xc000012040}, {0xc000224100, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc000228071, 0x1}, {0xc00022807b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0002142a0}, 0xc00022806c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0002142a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00022806c, {0x55d2e8, 0xc0002142a0}, 0xc00011ea00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001480c0}, {0x55d2e8, 0xc0002142a0}, 0xc00011ea00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068be0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:45 http: panic serving 127.0.0.1:53274: runtime error: invalid memory address or nil pointer dereference
+goroutine 206 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc000246050, 0x45}, {0x0, 0x0, 0x0}, 0x50)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0eb8, {0x55eb30, 0xc000012040}, {0xc000246050, 0x45}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc000246050, 0x836ba}, {0x0, 0x0, 0xc0002081d8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc0002081d8, 0x6}, {0xc0002081e7, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc000214460}, 0xc0002081cf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc000214460}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002081cf, {0x55d2e8, 0xc000214460}, 0xc000207c00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000188a50}, {0x55d2e8, 0xc000214460}, 0xc000207c00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000298000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:18:45 http: panic serving 127.0.0.1:53275: runtime error: invalid memory address or nil pointer dereference
+goroutine 207 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc0004d0680, 0x7b}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00034ad61, {0x55eb30, 0xc000012040}, {0xc0004d0680, 0x7b})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00034ad61, 0x1}, {0xc00034ad6b, 0x4})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0000bcb60}, 0xc00034ad5c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0000bcb60}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00034ad5c, {0x55d2e8, 0xc0000bcb60}, 0xc00029c000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000218330}, {0x55d2e8, 0xc0000bcb60}, 0xc00029c000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002980a0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64976: runtime error: invalid memory address or nil pointer dereference
+goroutine 254 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc0002e6000, 0x44}, {0x0, 0x0, 0x0}, 0x0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0eb8, {0x55eb30, 0xc000012040}, {0xc0002e6000, 0x44}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc0002e6000, 0x836ba}, {0x0, 0x0, 0xc0002d2018})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc0002d2018, 0x6}, {0xc0002d2027, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0002d60e0}, 0xc0002d200f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0002d60e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002d200f, {0x55d2e8, 0xc0002d60e0}, 0xc0001c0900)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000204030}, {0x55d2e8, 0xc0002d60e0}, 0xc0001c0900)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64977: runtime error: invalid memory address or nil pointer dereference
+goroutine 255 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc000112a80, 0x7a}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00034b031, {0x55eb30, 0xc000012040}, {0xc000112a80, 0x7a})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00034b031, 0x1}, {0xc00034b03b, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc00018b0a0}, 0xc00034b02c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc00018b0a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00034b02c, {0x55d2e8, 0xc00018b0a0}, 0xc0001c0200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00036c0f0}, {0x55d2e8, 0xc00018b0a0}, 0xc0001c0200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc000068320, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64982: runtime error: invalid memory address or nil pointer dereference
+goroutine 315 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc0002320a0, 0x44}, {0x0, 0x0, 0x0}, 0xa0)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0a28, {0x55eb30, 0xc000012040}, {0xc0002320a0, 0x44}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc0002320a0, 0x836ba}, {0x0, 0x0, 0xc00033c818})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00033c818, 0x6}, {0xc00033c827, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0002147e0}, 0xc00033c80f)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0002147e0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00033c80f, {0x55d2e8, 0xc0002147e0}, 0xc000145200)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00036c840}, {0x55d2e8, 0xc0002147e0}, 0xc000145200)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a00a0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64983: runtime error: invalid memory address or nil pointer dereference
+goroutine 317 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc000112c00, 0x7a}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00034b0c1, {0x55eb30, 0xc000012040}, {0xc000112c00, 0x7a})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00034b0c1, 0x1}, {0xc00034b0cb, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc00018b260}, 0xc00034b0bc)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc00018b260}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00034b0bc, {0x55d2e8, 0xc00018b260}, 0xc0002c6000)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000104f00}, {0x55d2e8, 0xc00018b260}, 0xc0002c6000)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0140, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64984: runtime error: invalid memory address or nil pointer dereference
+goroutine 209 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc00000c460, 0x44}, {0x0, 0x0, 0x0}, 0x60)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0108, {0x55eb30, 0xc000012040}, {0xc00000c460, 0x44}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc00000c460, 0x836ba}, {0x0, 0x0, 0xc00000f0d8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc00000f0d8, 0x6}, {0xc00000f0e7, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc00018b420}, 0xc00000f0cf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc00018b420}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00000f0cf, {0x55d2e8, 0xc00018b420}, 0xc0001c0700)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000204bd0}, {0x55d2e8, 0xc00018b420}, 0xc0001c0700)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0002ce000, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64991: runtime error: invalid memory address or nil pointer dereference
+goroutine 341 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).prepare(0xbe67c, {0x55eb30, 0xc000012040}, {0xc00020e500, 0x7a}, 0x3)
+	E:/env/go/src/database/sql/sql.go:1555 +0x45
+database/sql.(*DB).PrepareContext(0xc00000aca1, {0x55eb30, 0xc000012040}, {0xc00020e500, 0x7a})
+	E:/env/go/src/database/sql/sql.go:1525 +0xa5
+database/sql.(*DB).Prepare(...)
+	E:/env/go/src/database/sql/sql.go:1545
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryOf({}, {0x4e0fc1, 0x6}, {0xc00000aca1, 0x1}, {0xc00000acab, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:236 +0x1da
+cloudMirror/controllers/controllers_default.ControllerImages.Images({}, {0x55d2e8, 0xc0002149a0}, 0xc00000ac9c)
+	E:/var/go/CloudMirror/controllers/controllers_default/images.go:15 +0x116
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0002149a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00000ac9c, {0x55d2e8, 0xc0002149a0}, 0xc0001c0a00)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc000205350}, {0x55d2e8, 0xc0002149a0}, 0xc0001c0a00)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a01e0, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:20 http: panic serving 127.0.0.1:64992: runtime error: invalid memory address or nil pointer dereference
+goroutine 342 [running]:
+net/http.(*conn).serve.func1()
+	E:/env/go/src/net/http/server.go:1802 +0xb9
+panic({0x496780, 0x44ef20})
+	E:/env/go/src/runtime/panic.go:1047 +0x266
+database/sql.(*DB).conn(0x0, {0x55eb30, 0xc000012040}, 0x1)
+	E:/env/go/src/database/sql/sql.go:1260 +0x53
+database/sql.(*DB).query(0x0, {0x55eb30, 0xc000012040}, {0xc000342320, 0x44}, {0x0, 0x0, 0x0}, 0x20)
+	E:/env/go/src/database/sql/sql.go:1695 +0x5d
+database/sql.(*DB).QueryContext(0x229f92f0598, {0x55eb30, 0xc000012040}, {0xc000342320, 0x44}, {0x0, 0x0, 0x0})
+	E:/env/go/src/database/sql/sql.go:1674 +0xdf
+database/sql.(*DB).QueryRowContext(...)
+	E:/env/go/src/database/sql/sql.go:1778
+database/sql.(*DB).QueryRow(0x4e3b8e, {0xc000342320, 0x836ba}, {0x0, 0x0, 0xc000364dd8})
+	E:/env/go/src/database/sql/sql.go:1792 +0x4a
+cloudMirror/models.ModelsCoreSQLite.DBSQLiteQueryPageCount({}, {0xc000364dd8, 0x6}, {0xc000364de7, 0x3})
+	E:/var/go/CloudMirror/models/core_sqlite3.go:255 +0xe7
+cloudMirror/controllers/controllers_default.ControllerPageCount.PageCount({}, {0x55d2e8, 0xc0001549a0}, 0xc000364dcf)
+	E:/var/go/CloudMirror/controllers/controllers_default/pageCount.go:15 +0x105
+net/http.HandlerFunc.ServeHTTP(0x0, {0x55d2e8, 0xc0001549a0}, 0x0)
+	E:/env/go/src/net/http/server.go:2047 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000364dcf, {0x55d2e8, 0xc0001549a0}, 0xc000145300)
+	E:/env/go/src/net/http/server.go:2425 +0x149
+net/http.serverHandler.ServeHTTP({0xc00036c8a0}, {0x55d2e8, 0xc0001549a0}, 0xc000145300)
+	E:/env/go/src/net/http/server.go:2879 +0x43b
+net/http.(*conn).serve(0xc0001a0280, {0x55eba0, 0xc000105110})
+	E:/env/go/src/net/http/server.go:1930 +0xb08
+created by net/http.(*Server).Serve
+	E:/env/go/src/net/http/server.go:3034 +0x4e8
+2022/02/15 23:28:21 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/15 23:28:21 failed inserting in videos.
+2022/02/15 23:28:21 The total number of files in the current directory(static/assets/images) is: 11.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 inserted in images successfully.
+2022/02/15 23:28:21 failed inserting in images.
+2022/02/15 23:28:21 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/15 23:28:21 failed inserting in audios.
+2022/02/15 23:28:21 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/15 23:28:21 failed inserting in documents.
+2022/02/15 23:28:21 failed inserting in documents.
+2022/02/15 23:28:21 failed inserting in documents.
+2022/02/15 23:32:00 CMLog is working!
+2022/02/15 23:32:00 the CM server was start!
+2022/02/15 23:32:04 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/15 23:32:04 failed inserting in videos.
+2022/02/15 23:32:04 The total number of files in the current directory(static/assets/images) is: 11.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 failed inserting in images.
+2022/02/15 23:32:04 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/15 23:32:04 failed inserting in audios.
+2022/02/15 23:32:04 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/15 23:32:04 failed inserting in documents.
+2022/02/15 23:32:04 failed inserting in documents.
+2022/02/15 23:32:04 failed inserting in documents.
+2022/02/15 23:35:11 CMLog is working!
+2022/02/15 23:35:11 the CM server was start!
+2022/02/15 23:45:40 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/15 23:45:40 failed inserting in videos.
+2022/02/15 23:45:40 The total number of files in the current directory(static/assets/images) is: 13.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 failed inserting in images.
+2022/02/15 23:45:40 inserted in images successfully.
+2022/02/15 23:45:40 inserted in images successfully.
+2022/02/15 23:45:40 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/15 23:45:40 failed inserting in audios.
+2022/02/15 23:45:40 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/15 23:45:40 failed inserting in documents.
+2022/02/15 23:45:40 failed inserting in documents.
+2022/02/15 23:45:40 failed inserting in documents.
+2022/02/15 23:45:58 The total number of files in the current directory(static/assets/videos) is: 1.
+2022/02/15 23:45:58 failed inserting in videos.
+2022/02/15 23:45:58 The total number of files in the current directory(static/assets/images) is: 13.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 failed inserting in images.
+2022/02/15 23:45:58 The total number of files in the current directory(static/assets/audios) is: 1.
+2022/02/15 23:45:58 failed inserting in audios.
+2022/02/15 23:45:58 The total number of files in the current directory(static/assets/docs) is: 3.
+2022/02/15 23:45:58 failed inserting in documents.
+2022/02/15 23:45:58 failed inserting in documents.
+2022/02/15 23:45:58 failed inserting in documents.

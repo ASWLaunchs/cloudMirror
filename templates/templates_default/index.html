@@ -183,7 +183,21 @@
         </div>
     </div>
     <!-- index searching page -->
-    <div></div>
+    <div id="searchingPage">
+        <img class="logo" src="/static/assets/images/CloudMirror.svg" width="90" height="90"
+            class="d-inline-block align-top" alt="">
+        <div class="searchingBar">
+            <li>
+                <input type="search" name="" id="keyWord">
+            </li>
+            <li>
+                <div class="searchButton" onclick="CM.func.query(1,$('#keyWord').val())"></div>
+            </li>
+        </div>
+        <footer>
+            @CloudMirror2022
+        </footer>
+    </div>
     <!-- Modal框 -->
     <div class="modal fade bd-CloudMirror-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">

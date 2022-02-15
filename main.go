@@ -12,6 +12,9 @@ import (
 )
 
 func main() {
+	//initialized database.
+	models.DBSQLiteInit()
+
 	// 静态文件路径
 	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("static/css/"))))
 	http.Handle("/static/js/", http.StripPrefix("/static/js/", http.FileServer(http.Dir("static/js/"))))
