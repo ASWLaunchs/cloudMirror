@@ -1,6 +1,0 @@
-2022/02/16 00:56:11 CMLog is working!
-2022/02/16 00:56:11 the CM server was start!
-2022/02/16 18:50:01 CMLog is working!
-2022/02/16 18:50:01 the CM server was start!
-2022/02/16 18:51:22 CMLog is working!
-2022/02/16 18:51:22 the CM server was start!
