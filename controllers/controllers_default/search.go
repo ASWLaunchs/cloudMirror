@@ -1,7 +1,8 @@
 package controllers_default
 
 import (
-	"fmt"
+	"cloudMirror/models"
+	"encoding/json"
 	"net/http"
 )
 
@@ -9,12 +10,10 @@ type ControllerSearch struct{}
 
 func (c ControllerSearch) Search(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
-	fid := ""
-	tag := ""
-	filename := q.Get("w")
-	createdTime := ""
-	// fmt.Println(models.ModelsCoreSQLite{}.DBSQLiteQuery("documents", fid, tag, filename, createdTime))
-	fmt.Println(fid, tag, filename, createdTime)
+	page := q.Get("page")
+	keyWord := q.Get("keyWord")
+	res1 := models.ModelsCoreSQLite{}.DBSQLiteQuery([]string{"documents", "images", "audios", "videos"}, page, keyWord)
+	res2, _ := json.Marshal(res1)
 	w.WriteHeader(200)
-	w.Write([]byte{1})
+	w.Write(res2)
 }

@@ -2,7 +2,6 @@ package models
 
 import (
 	"database/sql"
-	"encoding/json"
 	"fmt"
 	"log"
 	"strconv"
@@ -142,65 +141,30 @@ func (c ModelsCoreSQLite) DBSQLiteUpdate(fid string, tag string, filename string
 //DBSQLiteQuery() be used to query data.
 //searching by file category when fileCategory isn't null.
 //all searching.
-func (c ModelsCoreSQLite) DBSQLiteQuery(fileCategory string, fid string, tag string, filename string, createdTime string) []byte {
-	var res sql.Result
-	if len(filename) > 0 {
-		//preset sql statement.
-		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' "
-		stmt, err = DBSQLite.Prepare(sqlStmt)
-		checkErr(err)
+func (c ModelsCoreSQLite) DBSQLiteQuery(category []string, page string, keyWord string) []SearchResult {
+	var result = make([]SearchResult, 0)
+	pageNum, _ := strconv.Atoi(page) //convert string to int , and make pageNum multiplied 10.
+	page = strconv.Itoa((pageNum - 1) * 10)
 
-		//execute sql statement.
-		res, err = stmt.Exec(fid, tag, filename, createdTime)
-		checkErr(err)
-	} else if len(filename) > 0 && len(tag) > 0 { //tag method.
-		//preset sql statement.
-		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' and tag like '%?%' "
-		stmt, err = DBSQLite.Prepare(sqlStmt)
-		checkErr(err)
+	//initialize some struct variables.
+	var fid, filename, tag, pathname, createdTime string
+	var filesize int
 
-		//execute sql statement.
-		res, err = stmt.Exec(fid, tag, filename, createdTime)
+	for _, v := range category {
+		//documents
+		sqlStmt = `SELECT fid, tag, filename, pathname,created_time, filesize FROM ` + v + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid limit ` + page + `,2`
+		//prepare sql string.
+		stmt, err := DBSQLite.Prepare(sqlStmt)
 		checkErr(err)
-	} else if len(filename) > 0 && len(createdTime) > 0 { //time method.
-		//preset sql statement.
-		sqlStmt = "SELECT * FROM " + fileCategory + " where filename like '%?%' and created_time < ?"
-		stmt, err = DBSQLite.Prepare(sqlStmt)
+		rows, err := stmt.Query()
 		checkErr(err)
-
-		//execute sql statement.
-		res, err = stmt.Exec(fid, tag, filename, createdTime)
-		checkErr(err)
-	} else if len(fid) > 0 { //fid method.
-		sqlStmt = "SELECT * FROM " + fileCategory + " where fid = ?"
+		for rows.Next() {
+			rows.Scan(&fid, &tag, &filename, &pathname, &createdTime, &filesize)
+			result = append(result, SearchResult{v, fid, tag, filename, pathname, createdTime, filesize})
+		}
 	}
 
-	affect, _ := res.RowsAffected()
-	var rs []byte
-	if affect > 0 {
-		rs, _ = json.Marshal(SearchResult{
-			Status:      true,
-			Fid:         "",
-			Tag:         "",
-			Filename:    "",
-			Pathname:    "",
-			CreatedTime: "",
-			Filesize:    "",
-		})
-	} else {
-		rs, _ = json.Marshal(SearchResult{
-			Status:      false,
-			Fid:         "",
-			Tag:         "",
-			Filename:    "",
-			Pathname:    "",
-			CreatedTime: "",
-			Filesize:    "",
-		})
-	}
-	fmt.Println(rs)
-	DBSQLite.Close()
-	return rs
+	return result
 }
 
 //DBSQLiteQueryStatistics()
@@ -232,7 +196,6 @@ func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string, keyWord 
 	page = strconv.Itoa((pageNum - 1) * 10)
 	sqlStmt = `SELECT fid, tag, filename, pathname,created_time, filesize FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid limit ` + page + `,10`
 	//prepare sql string.
-
 	stmt, err := DBSQLite.Prepare(sqlStmt)
 	checkErr(err)
 	rows, err := stmt.Query()

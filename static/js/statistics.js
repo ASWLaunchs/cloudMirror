@@ -5,7 +5,9 @@ const statistics = {
             $.get("/statistics").done(function (data) {
                 var data = JSON.parse(data)
                 let updatedTime = new Date().Format("yyyy-MM-dd hh:mm:ss");
-                let chart = `<p>更新时间:`+updatedTime+`</p><canvas id="myChart" width="400" height="130"></canvas>`
+                let chart = `
+                <div id="result-stats">更新时间: ${updatedTime} </div>
+                <canvas id="myChart" width="400" height="130"></canvas>`
                 $('#container').html(chart)
                 const ctx = document.getElementById('myChart');
                 const myChart = new Chart(ctx, {
@@ -42,7 +44,6 @@ const statistics = {
                         }
                     }
                 });
-                console.log(data)
             })
         }
     }

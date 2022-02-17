@@ -27,7 +27,8 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">全部</a>
+                    <a class="nav-link" href="#"
+                        onclick="CM.func.query('default',1,CM.func.getQueryVariable('keyWord'))">全部</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0)"
@@ -64,10 +65,12 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" onsubmit="search.func.getAll(false ,$('#searchValue').val())">
+            <form class="form-inline my-2 my-lg-0" target="nm_iframe" method="get"
+                onsubmit="CM.func.query(CM.func.getQueryVariable('category'),1,CM.func.getQueryVariable('keyWord'))">
                 <input id="searchValue" class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
             </form>
+            <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
         </div>
     </nav>
 
@@ -146,7 +149,7 @@
                     </div>
 
                     <!--Video CONTENT -->
-                    <div class="item item-type-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
+                    <!-- <div class="item item-type-video" data-toggle="modal" data-target=".bd-CloudMirror-modal-lg">
                         <div class="item-head-image"><img class="item-type-icon" src="/static/assets/images/video.svg"
                                 alt="" srcset=""><span class="item-image-title">演示视频</span></div>
                         <div class="item-brief-doc">
@@ -163,12 +166,11 @@
                             <button type="button" class="btn btn-link btn-sm" class="btn btn-link btn-sm">预览</button>
                             <button type="button" class="btn btn-link btn-sm">下载</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0"></div>
         </div>
-
         <!-- 按钮组 -->
         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -191,7 +193,7 @@
                 <input type="search" name="" id="keyWord">
             </li>
             <li>
-                <div class="searchButton" onclick="CM.func.query(1,$('#keyWord').val())"></div>
+                <div class="searchButton" onclick="CM.func.query('default',1,$('#keyWord').val())"></div>
             </li>
         </div>
         <footer>
@@ -220,7 +222,7 @@
     <script src="/static/js/loading.js"></script>
     <script src="/static/js/time.js"></script>
     <script src="/static/js/index.js"></script>
-    <script src="/static/js/search.js"></script>
+    <!-- <script src="/static/js/search.js"></script> -->
     <script src="/static/js/documents.js"></script>
     <script src="/static/js/images.js"></script>
     <!-- <script src="/static/js/audios.js"></script> -->

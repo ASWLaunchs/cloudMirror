@@ -11,6 +11,10 @@ const Images = {
             Images.data.page = page
             Images.data.keyWord = keyWord
             Images.func.pagination()
+            window.history.replaceState({
+                id: null,
+                name: null
+            }, 'x', '?category=images&page=1&keyWord=' + keyWord);
             $.get("/images", {
                 page: page,
                 keyWord: keyWord,
@@ -49,7 +53,6 @@ const Images = {
             })
         },
         pagination: function () {
-            var buttonGroup = null
             $.get("/pageCount", {
                 category: "images",
                 keyWord: Images.data.keyWord,
@@ -94,6 +97,13 @@ const Images = {
                 }
             })
         },
+        download: function (event, href, title) {
+            event.preventDefault()
+            const a = document.createElement('a');
+            a.setAttribute('href', href);
+            a.setAttribute('download', title);
+            a.click();
+        },
         preview: function (fid, tag, filename, pathname, createdTime, filesize) {
             $.get(pathname + '/' + filename).done(function (data) {
                 let fileDetail = `
@@ -111,13 +121,6 @@ const Images = {
                 </div>`
                 $("#fileDetail").html(fileDetail)
             })
-        },
-        download: function (event, href, title) {
-            event.preventDefault()
-            const a = document.createElement('a');
-            a.setAttribute('href', href);
-            a.setAttribute('download', title);
-            a.click();
         }
     }
 }

@@ -1,6 +1,7 @@
 package hlsConverter
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 )
@@ -25,4 +26,21 @@ func GenerateHLSCustom(ffmpegPath string, options []string) error {
 
 	err := cmd.Start()
 	return err
+}
+
+//HlsConverter main execution function.
+func HlsConverter(category string, ffmpegPath string, srcPath string, targetPath string, targetFilename string, resOptions []string) {
+	if category == "post" {
+
+	} else if category == "video" {
+		variants, _ := GenerateHLSVariant(resOptions, "")
+		GeneratePlaylist(variants, targetPath, targetFilename)
+
+		for _, res := range resOptions {
+			err := GenerateHLS(ffmpegPath, srcPath, targetPath, res)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
+	}
 }
