@@ -64,7 +64,7 @@ func GenerateHLSCustom(ffmpegPath string, options []string) error {
 
 //GeneratePoster() generate poster according to source video file.
 func GeneratePoster(ffmpegPath string, srcPath string, targetPath string, framePosition string) error {
-	cmd := exec.Command(ffmpegPath, "-i", srcPath, "-ss", framePosition, "-frames:v", "1", targetPath+"/poster.jpg")
+	cmd := exec.Command(ffmpegPath, "-i", srcPath, "-ss", framePosition, "-frames:v", "1", "-y", targetPath+"/poster.jpg")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 

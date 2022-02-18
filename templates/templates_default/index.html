@@ -15,7 +15,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
             <img src="/static/assets/images/CloudMirror.svg" width="30" height="30" class="d-inline-block align-top"
                 alt="">
             &nbsp;云镜
@@ -40,9 +40,11 @@
                 </li>
                 <li class="nav-item">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">音乐</a>
+                    <a class="nav-link" href="javascript:void(0)"
+                        onclick="Audios.func.query(1,CM.func.getQueryVariable('keyWord'))">音乐</a>
                 </li>
-                <a class="nav-link" href="#">视频</a>
+                <a class="nav-link" href="javascript:void(0)"
+                    onclick="Videos.func.query(1,CM.func.getQueryVariable('keyWord'))">视频</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="statistics.func.statistics()">统计</a>
@@ -222,11 +224,10 @@
     <script src="/static/js/loading.js"></script>
     <script src="/static/js/time.js"></script>
     <script src="/static/js/index.js"></script>
-    <!-- <script src="/static/js/search.js"></script> -->
     <script src="/static/js/documents.js"></script>
     <script src="/static/js/images.js"></script>
-    <!-- <script src="/static/js/audios.js"></script> -->
-    <!-- <script src="/static/js/videos.js"></script> -->
+    <script src="/static/js/audios.js"></script>
+    <script src="/static/js/videos.js"></script>
     <script src="/static/js/statistics.js"></script>
 </body>
 

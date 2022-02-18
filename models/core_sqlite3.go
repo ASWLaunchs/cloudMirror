@@ -188,13 +188,32 @@ func (c ModelsCoreSQLite) DBSQLiteQueryStatistics(category []string) []Statistic
 	return result
 }
 
-//DBSQLiteQueryOf() -> default query all .
+//DBSQLiteQueryByFid() -> executes precise query by fid.
+func (c ModelsCoreSQLite) DBSQLiteQueryByFid(fid string, category string) []Resource {
+	var result = make([]Resource, 0)
+	sqlStmt = `SELECT fid, tag, filename, pathname, created_time, filesize FROM` + category + `WHERE fid = ` + fid
+	stmt, err := DBSQLite.Prepare(sqlStmt)
+	checkErr(err)
+	rows, err := stmt.Query()
+	checkErr(err)
+
+	var filename, tag, pathname, createdTime string
+	var filesize int
+	for rows.Next() {
+		rows.Scan(&fid, &tag, &filename, &pathname, &createdTime, &filesize)
+		result = append(result, Resource{fid, tag, filename, pathname, createdTime, filesize})
+	}
+
+	return result
+}
+
+//DBSQLiteQueryByCategory() -> default query by category.
 //return resource info and page number count.
-func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string, keyWord string) []Resource {
+func (c ModelsCoreSQLite) DBSQLiteQueryByCategory(category string, page string, keyWord string) []Resource {
 	var result = make([]Resource, 0)
 	pageNum, _ := strconv.Atoi(page) //convert string to int , and make pageNum multiplied 10.
 	page = strconv.Itoa((pageNum - 1) * 10)
-	sqlStmt = `SELECT fid, tag, filename, pathname,created_time, filesize FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid limit ` + page + `,10`
+	sqlStmt = `SELECT fid, tag, filename, pathname, created_time, filesize FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid limit ` + page + `,10`
 	//prepare sql string.
 	stmt, err := DBSQLite.Prepare(sqlStmt)
 	checkErr(err)
@@ -215,8 +234,15 @@ func (c ModelsCoreSQLite) DBSQLiteQueryOf(category string, page string, keyWord 
 func (c ModelsCoreSQLite) DBSQLiteQueryPageCount(category string, keyWord string) int {
 	pagination = make(map[string]int)
 	var count int
-	err := DBSQLite.QueryRow(`SELECT count(*) FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid`).Scan(&count)
-	checkErr(err)
+
+	// category equal default means all query.
+	if category == "default" {
+		err := DBSQLite.QueryRow(`SELECT sum(co) FROM (SELECT count(*) co FROM documents as d WHERE d.filename LIKE '` + keyWord + `%' GROUP BY fid UNION ALL SELECT count(*) co FROM images as i WHERE i.filename LIKE '%` + keyWord + `%' GROUP BY fid UNION ALL SELECT count(*) co FROM audios as a WHERE a.filename LIKE '%` + keyWord + `%' GROUP BY fid UNION ALL SELECT count(*) co FROM videos as v WHERE v.filename LIKE '%` + keyWord + `%' GROUP BY fid ) as tb`).Scan(&count)
+		checkErr(err)
+	} else {
+		err := DBSQLite.QueryRow(`SELECT count(*) FROM ` + category + ` WHERE filename LIKE '%` + keyWord + `%' ORDER BY fid`).Scan(&count)
+		checkErr(err)
+	}
 	pagination[category] = count
 	return pagination[category]
 }
