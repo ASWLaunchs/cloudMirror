@@ -4,6 +4,8 @@
 <p align="center"><img src="./static/assets/images/example.png" style="width:100%"/></p>
 <p align="center"><img src="./static/assets/images/example_1.png" style="width:100%"/></p>
 
+# CM功能流程
+<p align="center"><img src="./static/assets/images/CM-function-stream.png" style="width:100%"/></p>
 
 # 项目依赖
 - MinGW-w64-v8.1.0
