@@ -2,26 +2,25 @@ package models
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"strconv"
 
 	_ "github.com/mattn/go-sqlite3"
+	"gopkg.in/ini.v1"
 )
 
 type ModelsCoreSQLite struct{}
 
 var DBSQLite *sql.DB
-var stmt *sql.Stmt
-var err error
 var sqlStmt string
 var pagination map[string]int
 
 //SQLiteInit() initialization data
 func DBSQLiteInit() {
-	db, err := sql.Open("sqlite3", "./data/cloudMirror.sqlite")
+	cfg, _ := ini.Load("./conf/app.ini")
+	db, err := sql.Open(cfg.Section("SQLite").Key("driverName").String(), cfg.Section("SQLite").Key("dataSourceName").String())
 	checkErr(err)
-	fmt.Println("🥥 SQLite was initialized successfully.")
+	log.Println("🥥 SQLite was initialized successfully.")
 	DBSQLite = db
 
 	//table > fid (file id ) / tag / filename / pathname  / created_time / filesize

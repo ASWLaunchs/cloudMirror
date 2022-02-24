@@ -6,18 +6,21 @@ import (
 	"encoding/json"
 	"net/http"
 	"path"
+
+	"gopkg.in/ini.v1"
 )
 
 type ControllerVideos struct{}
 
 func (c ControllerVideos) Videos(w http.ResponseWriter, r *http.Request) {
+	cfg, _ := ini.Load("./conf/app.ini")
 	q := r.URL.Query()
 	page := q.Get("page")       //get page number.
 	keyWord := q.Get("keyWord") //searching key word.
 	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryByCategory("videos", page, keyWord)
 
 	for _, v := range res1 {
-		ffmpegPath := "E:/env/pkg/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe"
+		ffmpegPath := cfg.Section("").Key("ffmpegPath").String()
 		srcPath := v.Pathname + "/" + v.Filename
 		targetPath := path.Join("static/assets/hls", v.Fid)
 		framePosition := "1"
@@ -37,7 +40,8 @@ func (c ControllerVideos) VideosView(w http.ResponseWriter, r *http.Request) {
 	fid := q.Get("fid") //get page number.
 	res1 := models.ModelsCoreSQLite{}.DBSQLiteQueryByFid(fid, "videos")
 
-	ffmpegPath := "E:/env/pkg/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe"
+	cfg, _ := ini.Load("./conf/app.ini")
+	ffmpegPath := cfg.Section("").Key("ffmpegPath").String()
 	var srcPath string
 	targetPath := path.Join("static/assets/hls", fid)
 	targetFilename := "video.m3u8"

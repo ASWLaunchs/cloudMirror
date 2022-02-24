@@ -7,6 +7,28 @@
 # CM功能流程
 <p align="center"><img src="./static/assets/images/CM-function-stream.png" style="width:100%"/></p>
 
+# 使用教程
+一、修改app.ini里的参数进行配置 （目前仍在开发，不可以投入生产环境使用）
+
+```
+#CM configuration params.
+
+app_name   = cloudMirror
+address = localhost:9000
+url = http://localhost:9000
+# 你的ffmpegPath路径
+ffmpegPath = E:/local/ffmpeg-master-latest-win64-gpl-shared/bin/ffmpeg.exe
+
+[SQLite]
+driverName      = sqlite3
+dataSourceName    = ./data/cloudMirror.sqlite
+```
+
+二、启动程序
+```
+go run main.go
+```
+
 # 项目依赖
 - MinGW-w64-v8.1.0
 - Go-v1.17.5
